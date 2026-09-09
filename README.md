@@ -1,4 +1,4 @@
-# Bok applikation
+# Bokapplikation
 
 ## Made by
 - [Lina Svärd](https://github.com/linasvard)
