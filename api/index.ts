@@ -80,7 +80,12 @@ import greetingRouter from '../src/routes/greetings'
 app.use('/api/auth', authRouter)
 app.use('/api/greetings', greetingRouter)
 
-
+import userRouter from '../src/routes/users'
+import bookRouter from '../src/routes/books'
+import reviewRouter from '../src/routes/reviews'
+app.use('/api/users', userRouter)
+app.use('/api/books', bookRouter)
+app.use('/api/reviews', reviewRouter)
 
 // Connect To DB
 import mongoose from 'mongoose';
