@@ -9,11 +9,12 @@ import {
 } from '../controllers/bookController.js'
 const router = express.Router()
 
-router.get('api/books', getAllBooks)
-router.get('api/books/:id', getBook)
+router.get('/', getAllBooks)
+router.get('/:id', getBook)
+router.post('/', verifyToken, createBook)
+router.patch('/:id', verifyToken, updateBook)
+router.delete('/:id', verifyToken, deleteBook)
 
-
-// Lina jobbar här
 
 export default router
 
