@@ -19,6 +19,11 @@ export const ReviewSchema = new Schema({
         min: 1,
         max: 5
     },
+    book_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'books',
+        required: true
+    },
     createdAt: {
         type: Date,
         default: Date.now
