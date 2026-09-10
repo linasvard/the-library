@@ -2,8 +2,29 @@ import { Request, Response } from 'express';
 import Books from '../models/Book.js'
 
 export const getBooks = async (req: Request, res: Response) => {
+    const search = req.query.search as string | undefined;
+    const sort = req.query.sort as string | undefined;
 
-}
+    try {
+        const filter: any = {};
+        if (search) {
+            filter.title = { $regex: search, $options: 'i' }; // Case-insensitive search
+        }
+
+        let query = Books.find(filter);
+        if (sort === 'asc') {
+            query = query.sort({ title: 1 });
+        } else if (sort === 'desc') {
+            query = query.sort({ title: -1 });
+        }
+        const books = await query.exec();
+        res.json(books);
+    } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        res.status(500).json({ error: message });
+    }
+
+};
 
 export const getBookById = async (req: Request, res: Response) => {
 
