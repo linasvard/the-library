@@ -1,8 +1,8 @@
 import express from 'express'
 import { verifyToken } from '../middleware/verifyToken'
 import {
-    getBooks,
-    getBookById,
+    getAllBooks,
+    getBook,
     createBook,
     updateBook,
     deleteBook

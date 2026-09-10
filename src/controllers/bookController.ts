@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import Books from '../models/Book.js'
 
-export const getBooks = async (req: Request, res: Response) => {
+export const getAllBooks = async (req: Request, res: Response) => {
     const search = req.query.search as string | undefined;
     const sort = req.query.sort as string | undefined;
 
@@ -26,7 +26,7 @@ export const getBooks = async (req: Request, res: Response) => {
 
 };
 
-export const getBookById = async (req: Request, res: Response) => {
+export const getBook = async (req: Request, res: Response) => {
 
 }
 
