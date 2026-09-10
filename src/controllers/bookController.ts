@@ -56,7 +56,26 @@ export const createBook = async (req: Request, res: Response) => {
 }
 
 export const updateBook = async (req: Request, res: Response) => {
+    const id = req.params.id as string;
+    const { title, description, author, genres, image, published_year } = req.body;
 
+    try {
+        const updatedBook = await Books.findByIdAndUpdate(
+            id,
+            { $set: { title, description, author, genres, image, published_year } },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedBook) {
+            res.status(404).json({ error: 'Book not found' });
+            return;
+        }
+
+        res.json({ message: 'Book updated successfully', book: updatedBook });
+        } catch (error) {
+            const message = error instanceof Error ? error.message : 'Unknown error';
+            res.status(500).json({ error: message });
+    }
 }
 
 export const deleteBook = async (req: Request, res: Response) => {
