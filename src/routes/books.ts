@@ -6,7 +6,7 @@ import {
     createBook,
     updateBook,
     deleteBook
-} from '../controllers/bookController.js'
+} from '../controllers/bookController'
 const router = express.Router()
 
 router.get('/', getAllBooks)
