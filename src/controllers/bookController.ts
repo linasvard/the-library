@@ -31,6 +31,27 @@ export const getBookById = async (req: Request, res: Response) => {
 }
 
 export const createBook = async (req: Request, res: Response) => {
+    const { title, description, author, genres, image, published_year } = req.body;
+    if (title === undefined || description === undefined || author === undefined || genres === undefined || image === undefined || published_year === undefined) {
+        res.status(400).json({ error: 'title, description, author, genres, image, and published_year are required' });
+        return;
+    }
+
+    try {
+        const newBook = new Books({
+            title,
+            description,
+            author,
+            genres,
+            image,
+            published_year
+        });
+        const savedBook = await newBook.save();
+        res.status(201).json({ message: 'Book created successfully', book: savedBook });
+    } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        res.status(500).json({ error: message });
+    }
 
 }
 

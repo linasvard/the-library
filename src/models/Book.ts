@@ -10,7 +10,8 @@ const BookSchema = new Schema({
         required: true
     },
     description: { 
-        type: String
+        type: String,
+        required: true
     },
     author: { 
         type: String,
@@ -23,10 +24,12 @@ const BookSchema = new Schema({
         default: []
     },
     image: {
-        type: String
+        type: String,
+        required: false
     },
     published_year: {
-        type: Number
+        type: Number,
+        required: true
     }
 })
 
