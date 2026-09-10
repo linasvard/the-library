@@ -4,7 +4,24 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    // model/schema här
+    username: {
+        type: String,
+        unique: true,
+        trim: true,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    is_admin: {
+        type: Boolean,
+        default: false
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
+    }
 })
 
-export default mongoose.model('reviews', UserSchema)
+export default mongoose.model('users', UserSchema)
