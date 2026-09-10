@@ -27,8 +27,20 @@ export const getAllBooks = async (req: Request, res: Response) => {
 };
 
 export const getBook = async (req: Request, res: Response) => {
+    const id = req.params.id as string;
 
-}
+    try {
+        const book = await Books.findById(id).populate('reviews');
+        if (!book) {
+            res.status(404).json({ error: 'Book not found' });
+            return;
+        }
+        res.json(book);
+    } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        res.status(500).json({ error: message });
+    }
+};
 
 export const createBook = async (req: Request, res: Response) => {
     const { title, description, author, genres, image, published_year } = req.body;
