@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const ReviewSchema = new Schema({
+export const ReviewSchema = new Schema({
     // model/schema här
     name: {
         type: String,

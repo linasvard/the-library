@@ -9,6 +9,10 @@ import {
 } from '../controllers/bookController.js'
 const router = express.Router()
 
+router.get('api/books', getAllBooks)
+router.get('api/books/:id', getBook)
+
+
 // Lina jobbar här
 
 export default router

@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import genresData from '../data/genres.json';
-import ReviewSchema from './Review';
+import { ReviewSchema } from './Review';
 
 const BookSchema = new Schema({
     title: {
@@ -36,7 +36,7 @@ const BookSchema = new Schema({
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }
-}
-)
+});
+
 
 export default mongoose.model('books', BookSchema)
