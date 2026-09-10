@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Books from '../models/Book.js'
+import Review from '../models/Review.js';
 
 export const getAllBooks = async (req: Request, res: Response) => {
     const search = req.query.search as string | undefined;
@@ -30,12 +31,14 @@ export const getBook = async (req: Request, res: Response) => {
     const id = req.params.id as string;
 
     try {
-        const book = await Books.findById(id).populate('reviews');
+        const book = await Books.findById(id);
         if (!book) {
             res.status(404).json({ error: 'Book not found' });
             return;
         }
-        res.json(book);
+
+        const reviews = await Review.find({ book_id: id });
+        res.json({ book, reviews });
     } catch (error) {
         const message = error instanceof Error ? error.message : 'Unknown error';
         res.status(500).json({ error: message });
@@ -69,12 +72,11 @@ export const createBook = async (req: Request, res: Response) => {
 
 export const updateBook = async (req: Request, res: Response) => {
     const id = req.params.id as string;
-    const { title, description, author, genres, image, published_year } = req.body;
-
+    
     try {
         const updatedBook = await Books.findByIdAndUpdate(
             id,
-            { $set: { title, description, author, genres, image, published_year } },
+            { $set: req.body },
             { new: true, runValidators: true }
         );
 
