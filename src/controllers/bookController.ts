@@ -47,8 +47,8 @@ export const getBook = async (req: Request, res: Response) => {
 
 export const createBook = async (req: Request, res: Response) => {
     const { title, description, author, genres, image, published_year } = req.body;
-    if (title === undefined || description === undefined || author === undefined || genres === undefined || image === undefined || published_year === undefined) {
-        res.status(400).json({ error: 'title, description, author, genres, image, and published_year are required' });
+    if (title === undefined || description === undefined || author === undefined || genres === undefined || published_year === undefined) {
+        res.status(400).json({ error: 'title, description, author, genres, and published_year are required' });
         return;
     }
 
