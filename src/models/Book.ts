@@ -2,6 +2,7 @@
 
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
+import genresData from '../data/genres.json';
 
 const BookSchema = new Schema({
     title: {
@@ -18,8 +19,8 @@ const BookSchema = new Schema({
     // Create a new field for genres as an array of strings
     genres: {
         type: [String],
-        default: [],
-        required: true
+        enum: genresData.genres,
+        default: []
     },
     image: {
         type: String
