@@ -22,11 +22,6 @@ const ReviewSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    },
-    bookId: {
-        type: Schema.Types.ObjectId,
-        ref: 'books',
-        required: true
     }
 
 })
