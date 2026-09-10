@@ -1,15 +1,20 @@
 import express from 'express'
 import { verifyToken } from '../middleware/verifyToken'
 import {
-    getBooks,
-    getBookById,
+    getAllBooks,
+    getBook,
     createBook,
     updateBook,
     deleteBook
-} from '../controllers/bookController.js'
+} from '../controllers/bookController'
 const router = express.Router()
 
-// Lina jobbar här
+router.get('/', getAllBooks)
+router.get('/:id', getBook)
+router.post('/', verifyToken, createBook)
+router.patch('/:id', verifyToken, updateBook)
+router.delete('/:id', verifyToken, deleteBook)
+
 
 export default router
 
