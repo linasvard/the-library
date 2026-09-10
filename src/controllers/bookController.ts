@@ -9,7 +9,7 @@ export const getAllBooks = async (req: Request, res: Response) => {
     try {
         const filter: any = {};
         if (search) {
-            filter.title = { $regex: search, $options: 'i' }; // Case-insensitive search
+            filter.title = { $regex: search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), $options: 'i' }; // Case-insensitive search
         }
 
         let query = Books.find(filter);
