@@ -10,6 +10,7 @@ import {
 const router = express.Router()
 
 router.get('/', getAllBooks)
+router.get('/admin', verifyToken, getAllBooks) // Admin route to get all books with authentication
 router.get('/:id', getBook)
 router.post('/', verifyToken, createBook)
 router.patch('/:id', verifyToken, updateBook)
