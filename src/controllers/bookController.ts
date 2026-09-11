@@ -103,6 +103,8 @@ export const deleteBook = async (req: Request, res: Response) => {
             return;
         }
 
+        await Review.deleteMany({ book_id: id }); // kopplar ihop reviews med boken och tar bort dem också
+
         res.json({ message: 'Book deleted successfully', book: deletedBook });
     } catch (error) {
         const message = error instanceof Error ? error.message : 'Unknown error';
