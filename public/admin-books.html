@@ -39,10 +39,15 @@
         <input type="text" class="form-control" id="book-author" placeholder="Author" required>
       </div>
       <div class="mb-3">
-        <label for="book-genres" class="form-label">Genres (hold Ctrl/Cmd to select multiple)</label>
-        <select class="form-select" id="book-genres" multiple required>
-          <!-- Options genereras med JS -->
-        </select>
+        <label class="form-label">Genres</label>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="genre-dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+            Select genres
+          </button>
+          <ul class="dropdown-menu p-2" id="genre-dropdown-menu" style="max-height: 250px; overflow-y: auto;">
+            <!-- Kryssrutor genereras med JS -->
+          </ul>
+        </div>
       </div>
       <div class="mb-3">
         <input type="text" class="form-control" id="book-image" placeholder="Image URL">

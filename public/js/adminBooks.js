@@ -1,6 +1,7 @@
 const adminBookList = document.getElementById("admin-book-list");
 const createBookForm = document.getElementById("create-book-form");
-const genreSelect = document.getElementById("book-genres");
+const genreDropdownMenu = document.getElementById("genre-dropdown-menu");
+const genreDropdownBtn = document.getElementById("genre-dropdown-btn");
 
 async function getAdminBooks() {
     try {
@@ -74,17 +75,29 @@ async function loadGenreOptions() {
         const response = await fetch(API_URL + "/genres");
         const availableGenres = await response.json();
 
-        genreSelect.innerHTML = availableGenres.map(genre =>
-            `<option value="${genre}">${genre}</option>`
-        ).join("");
+        genreDropdownMenu.innerHTML = availableGenres.map((genre, index) => `
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input genre-checkbox" type="checkbox" value="${genre}" id="genre-${index}">
+                    <label class="form-check-label" for="genre-${index}">${genre}</label>
+                </div>
+            </li>
+        `).join("");
     } catch (error) {
         console.error("Error loading genres:", error);
     }
 }
 
 function getSelectedGenres() {
-    return Array.from(genreSelect.selectedOptions).map(option => option.value);
+    return Array.from(document.querySelectorAll('.genre-checkbox:checked')).map(checkbox => checkbox.value);
 }
+
+genreDropdownMenu.addEventListener("change", () => {
+    const selected = getSelectedGenres();
+    genreDropdownBtn.textContent = selected.length > 0
+        ? `${selected.length} genre${selected.length > 1 ? 's' : ''} selected`
+        : "Select genres";
+});
 
 // --- Skapa bok ---
 
@@ -124,7 +137,8 @@ createBookForm.addEventListener("submit", async (e) => {
         const data = await response.json();
         if (response.ok) {
             createBookForm.reset();
-            Array.from(genreSelect.options).forEach(option => option.selected = false);
+            document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
+            genreDropdownBtn.textContent = "Select genres";
             document.getElementById("create-message").className = "alert alert-success";
             document.getElementById("create-message").innerHTML = "Book created successfully!";
             loadAdminBooks();
