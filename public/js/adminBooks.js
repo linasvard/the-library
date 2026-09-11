@@ -1,4 +1,5 @@
 const adminBookList = document.getElementById("admin-book-list");
+const createBookForm = document.getElementById("create-book-form");
 
 async function getAdminBooks() {
     try {
