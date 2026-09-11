@@ -83,3 +83,20 @@ export const updateReview = async (req: Request, res: Response) => {
         res.status(500).json({ error: message });
     }
 }
+
+export const deleteReview = async (req: Request, res: Response) => {
+    const id = req.params.id;
+
+    try {
+        const deletedReview = await Review.findByIdAndDelete(id);
+        if (!deletedReview) {
+        res.status(404).json({ error: 'Review not found'});
+        return;
+    }
+
+    res.json({ message: 'Review deleted', review: deletedReview});
+    } catch (error:unknown) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        res.status(500).json({ error: message });
+    }
+}

@@ -33,3 +33,21 @@ Content-Type: application/json
   "rating": 3,
   "book_id": "000000000000000000000000"
 }
+
+### Logga in
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+### Uppdatera review (kräver inloggning)
+PATCH http://localhost:3000/api/reviews/6aa3d9c3acffe9737c62043d
+Content-Type: application/json
+
+{
+  "content": "Uppdaterad recension - ännu bättre vid omläsning!",
+  "rating": 4
+}
