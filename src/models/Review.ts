@@ -24,7 +24,7 @@ export const ReviewSchema = new Schema({
         ref: 'books',
         required: true
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: Date.now
     }
