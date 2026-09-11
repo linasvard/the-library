@@ -27,11 +27,16 @@ function renderBooks(books) {
     
     books.forEach(book => {
         const bookElement = document.createElement("div");
+
+        const genreBadges = book.genres
+            .map(genre => `<span class="badge bg-secondary me-1">${genre}</span>`)
+            .join("");
         
         bookElement.innerHTML = `
+            <img src="${book.image}" alt="${book.title}" width="200">
+            <p>${genreBadges}</p>
             <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
-            <p>Year: ${book.year}</p>
+            <p>${book.author}</p>
         `;
         bookList.appendChild(bookElement);
     });
