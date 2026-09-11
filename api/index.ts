@@ -82,9 +82,11 @@ app.use('/api/greetings', greetingRouter)
 
 import userRouter from '../src/routes/users'
 import bookRouter from '../src/routes/books'
+import genreRouter from '../src/routes/genres'
 import reviewRouter from '../src/routes/reviews'
 app.use('/api/users', userRouter)
 app.use('/api/books', bookRouter)
+app.use('/api/genres', genreRouter)
 app.use('/api/reviews', reviewRouter)
 
 // Connect To DB
