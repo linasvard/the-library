@@ -1,0 +1,35 @@
+### Hämta böcker
+GET http://localhost:3000/api/books
+
+### Skapa giltig review
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Anna",
+  "content": "Riktigt bra bok!",
+  "rating": 4,
+  "book_id": "6aa2b5503759556aa606411b"
+}
+
+### Skapa ogiltigt rating (400)
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Erik",
+  "content": "Sådär",
+  "rating": 7,
+  "book_id": "6aa2b5503759556aa606411b"
+}
+
+### Test: book_id som inte finns (404)
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Lisa",
+  "content": "Test",
+  "rating": 3,
+  "book_id": "000000000000000000000000"
+}

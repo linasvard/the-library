@@ -1,6 +1,6 @@
 import express from 'express'
 import { verifyToken } from '../middleware/verifyToken.js'
-import { getAllReviews, getReview } from '../controllers/reviewController.js'
+import { getAllReviews, getReview, createReview } from '../controllers/reviewController.js'
 
 const router = express.Router()
 
@@ -8,5 +8,6 @@ const router = express.Router()
 
 router.get('/', getAllReviews)
 router.get('/:id', getReview)
+router.post('/', createReview)
 
 export default router
