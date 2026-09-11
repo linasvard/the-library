@@ -1,10 +1,8 @@
-
-
 import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
 
-export const ReviewSchema = new Schema({
-    // model/schema här
+const ReviewSchema = new Schema({
     name: {
         type: String,
         required: true

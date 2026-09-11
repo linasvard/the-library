@@ -4,8 +4,6 @@ import { getAllReviews, getReview, createReview, updateReview, deleteReview } fr
 
 const router = express.Router()
 
-
-
 router.get('/', getAllReviews)
 router.get('/:id', getReview)
 router.post('/', createReview)

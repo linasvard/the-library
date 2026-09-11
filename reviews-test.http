@@ -48,6 +48,12 @@ PATCH http://localhost:3000/api/reviews/6aa3d9c3acffe9737c62043d
 Content-Type: application/json
 
 {
-  "content": "Uppdaterad recension - ännu bättre vid omläsning!",
+  "content": "Test utan/med token",
   "rating": 4
 }
+
+### Logga ut
+POST http://localhost:3000/api/auth/logout
+
+### Ta bort en review (kräver inloggning)
+DELETE http://localhost:3000/api/reviews/6aa3d9c3acffe9737c62043d
