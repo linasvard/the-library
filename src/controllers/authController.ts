@@ -81,6 +81,11 @@ export const register = async (req: Request, res: Response) => {
 }
 
 export const logout = async (req: Request, res: Response) => {
+   try { 
     res.clearCookie('accessToken')
     res.json({message: "You are logged out"})
+    } catch (e) {
+        console.log(e)
+        res.status(500).json({message: 'Internal server error'})
+    }
 }
