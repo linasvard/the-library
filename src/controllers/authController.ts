@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
+import users from "../models/User"
 
 export const login = async (req: Request, res: Response) => {
     const {username, password} = req.body
@@ -51,10 +52,19 @@ export const register = async (req: Request, res: Response) => {
     }
 
     try {
+        const existingUser = await users.findOne({ username })
+
+        if (existingUser) {
+            res.status(409).json({message: 'Username is already taken'})
+            return
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10)
+        const newUser = new users({username, password: hashedPassword})
+        await newUser.save()
 
         // The hashedPassword is the value that should be saved in the DB, not the plain password. For security reasons
-        res.json({message: "You are registered", username: username, password: password, hashedPassword: hashedPassword})
+        res.json({message: "You are registered", id: newUser._id, username: newUser.username})
     } catch (e) {
         console.log(e)
     }
