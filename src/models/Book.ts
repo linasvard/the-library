@@ -30,6 +30,10 @@ const BookSchema = new Schema({
     published_year: {
         type: Number,
         required: true
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
 }, {
     toJSON: { virtuals: true },
