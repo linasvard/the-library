@@ -60,13 +60,14 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         createdAt.className = "card-text";
         const createdAtSmall = document.createElement("small");
         createdAtSmall.className = "text-muted";
-        createdAtSmall.textContent = `Created at: ${new Date(book.created_at).toLocaleDateString()}`;
+        createdAtSmall.textContent = book.created_at ? `Created at: ${formateDate(book.created_at)}` : "Created at: -";
+        
         createdAt.appendChild(createdAtSmall);
 
         const deleteBtn = document.createElement("button");
         deleteBtn.className = "btn btn-sm btn-outline-danger w-100";
         deleteBtn.textContent = "Delete";
-        deleteBtn.addEventListener("click", () => deleteBook(book.id));
+        deleteBtn.addEventListener("click", () => deleteBook(book._id));
 
         cardBody.append(title, author, createdAt, deleteBtn);
         card.append(img, cardBody);
