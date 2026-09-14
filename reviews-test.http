@@ -1,0 +1,71 @@
+### Hämta böcker
+GET http://localhost:3000/api/books
+
+### Skapa giltig review
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Anna",
+  "content": "Riktigt bra bok!",
+  "rating": 4,
+  "book_id": "6aa2b5503759556aa606411b"
+}
+
+### Skapa ogiltigt rating (400)
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Erik",
+  "content": "Sådär",
+  "rating": 7,
+  "book_id": "6aa2b5503759556aa606411b"
+}
+
+### Test: book_id som inte finns (404)
+POST http://localhost:3000/api/reviews
+Content-Type: application/json
+
+{
+  "name": "Lisa",
+  "content": "Test",
+  "rating": 3,
+  "book_id": "000000000000000000000000"
+}
+
+### Registrera test-användare
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "marcus",
+  "password": "test123"
+}
+
+### Logga in
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "marcus",
+  "password": "test123"
+}
+
+### Uppdatera review (kräver inloggning)
+PATCH http://localhost:3000/api/reviews/6aa3d9c3acffe9737c62043d
+Content-Type: application/json
+
+{
+  "content": "Test utan/med token",
+  "rating": 4
+}
+
+### Logga ut
+POST http://localhost:3000/api/auth/logout
+
+### Ta bort en review (kräver inloggning)
+DELETE http://localhost:3000/api/reviews/6aa40e64b5a2544671a2eea8
+
+### Hämta alla reviews
+GET http://localhost:3000/api/reviews
