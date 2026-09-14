@@ -35,7 +35,7 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
 
     books.forEach(book => {
         const col = document.createElement("div");
-        col.className = "col-md-3 mb-4";
+        col.className = "col-md-2 mb-3";
 
         const card = document.createElement("div");
         card.className = "card h-100";
