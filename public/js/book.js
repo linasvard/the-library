@@ -32,9 +32,10 @@ async function fetchBook() {
 }
 
 function renderBook(book) {
-    bookTitle.textContent = book.title;
+    document.title = book.title;
     bookDetail.innerHTML = "";
 
+    // Vänster kolumn med bild
     const imgCol = document.createElement("div");
     imgCol.className = "col-md-4";
 
@@ -45,34 +46,24 @@ function renderBook(book) {
 
     imgCol.appendChild(img);
 
+
+    // Höger kolumn med information
     const infoCol = document.createElement("div");
     infoCol.className = "col-md-8";
 
-    const author = document.createElement("p");
-    const authorStrong = document.createElement("strong");
-    authorStrong.textContent = "Author: ";
-    author.appendChild(authorStrong);
-    author.append(book.author);
+    const title = document.createElement("h1");
+    title.className = "fw-bold";
+    title.textContent = book.title;
 
-    const publishedYear = document.createElement("p");
-    const publishedYearStrong = document.createElement("strong");
-    publishedYearStrong.textContent = "Published: ";
-    publishedYear.appendChild(publishedYearStrong);
-    publishedYear.append(String(book.published_year));
-
-    const genresParagraph = document.createElement("p");
-    book.genres.forEach(genre => {
-        const badge = document.createElement("span");
-        badge.className = "badge bg-secondary me-1";
-        badge.textContent = genre;
-        genresParagraph.appendChild(badge);
-    });
+    const author = document.createElement("h5");
+    author.className = "text-muted mb-4";
+    author.textContent = book.author;
 
     const description = document.createElement("p");
-    description.className = "mt-3";
+    description.className = "fs-6";
     description.textContent = book.description;
 
-    infoCol.append(author, publishedYear, genresParagraph, description);
+    infoCol.append(title, author, description);
 
     bookDetail.append(imgCol, infoCol);
 }
