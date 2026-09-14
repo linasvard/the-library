@@ -34,13 +34,22 @@ Content-Type: application/json
   "book_id": "000000000000000000000000"
 }
 
+### Registrera test-användare
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "marcus",
+  "password": "test123"
+}
+
 ### Logga in
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "admin",
-  "password": "123"
+  "username": "marcus",
+  "password": "test123"
 }
 
 ### Uppdatera review (kräver inloggning)
@@ -56,4 +65,7 @@ Content-Type: application/json
 POST http://localhost:3000/api/auth/logout
 
 ### Ta bort en review (kräver inloggning)
-DELETE http://localhost:3000/api/reviews/6aa3d9c3acffe9737c62043d
+DELETE http://localhost:3000/api/reviews/6aa40e64b5a2544671a2eea8
+
+### Hämta alla reviews
+GET http://localhost:3000/api/reviews
