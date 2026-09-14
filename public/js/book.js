@@ -63,7 +63,17 @@ function renderBook(book) {
     description.className = "fs-6";
     description.textContent = book.description;
 
-    infoCol.append(title, author, description);
+    const genresParagraph = document.createElement("p");
+    genresParagraph.className = "mt-4";
+    book.genres.forEach(genre => {
+        const badge = document.createElement("span");
+        badge.className = "badge bg-secondary me-1";
+        badge.textContent = genre;
+        genresParagraph.appendChild(badge);
+    });
+
+
+    infoCol.append(title, author, description, genresParagraph);
 
     bookDetail.append(imgCol, infoCol);
 }
