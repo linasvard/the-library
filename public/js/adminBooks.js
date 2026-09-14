@@ -13,7 +13,7 @@ async function getAdminBooks() {
             credentials: "include"
         });
 
-        if (response.status === 401 || response.status === 403) {
+        if (response.status === 401 || response.status === 403) { // Hanterar icke-auktoriserad åtkomst och omdirigerar användaren till inloggningssidan
             window.location.href = "index.html?error=unauthorized";
             return;
         }
@@ -30,19 +30,49 @@ async function getAdminBooks() {
     }
 }
 
-function renderAdminBooks(books) {
-    adminBookList.innerHTML = books.map(book => `
-         <tr>
-            <td>${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.genres.join(", ")}</td>
-            <td>${book.created_at ? formateDate(book.created_at) : "-"}</td>
-            <td>${book.published_year}</td>
-            <td>
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteBook('${book._id}')">Delete</button>
-            </td>
-        </tr>
-    `).join("");
+function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istället för att använda innerHTML direkt
+    adminBookList.innerHTML = "";
+
+    books.forEach(book => {
+        const col = document.createElement("div");
+        col.className = "col-md-3 mb-4";
+
+        const card = document.createElement("div");
+        card.className = "card h-100";
+
+        const img = document.createElement("img");
+        img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649"; // placeholder image if book.image is null
+        img.alt = book.title;
+        img.className = "card-img-top";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const title = document.createElement("h5");
+        title.className = "card-title";
+        title.textContent = book.title;
+
+        const author = document.createElement("p");
+        author.className = "card-text";
+        author.textContent = book.author;
+
+        const createdAt = document.createElement("p");
+        createdAt.className = "card-text";
+        const createdAtSmall = document.createElement("small");
+        createdAtSmall.className = "text-muted";
+        createdAtSmall.textContent = `Created at: ${new Date(book.created_at).toLocaleDateString()}`;
+        createdAt.appendChild(createdAtSmall);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "btn btn-sm btn-outline-danger w-100";
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click", () => deleteBook(book.id));
+
+        cardBody.append(title, author, createdAt, deleteBtn);
+        card.append(img, cardBody);
+        col.appendChild(card);
+        adminBookList.appendChild(col);
+    })
 }
 
 async function deleteBook(bookId) {
