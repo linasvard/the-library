@@ -73,8 +73,12 @@ function renderBook(book) {
         genresParagraph.appendChild(badge);
     });
 
+    const publishedYear = document.createElement("p");
+    publishedYear.className = "text-muted mb-4";
+    publishedYear.textContent = `Published: ${book.published_year}`;
 
-    infoCol.append(title, author, description, genresParagraph);
+
+    infoCol.append(title, author, description, genresParagraph, publishedYear);
 
     bookDetail.append(imgCol, infoCol);
 }

@@ -44,7 +44,8 @@ function renderBooks(books) {
         img.className = "card-img-top";
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "card-body p-0 pt-2";
+
 
         const genreBadges = document.createElement("p");
         book.genres.forEach(genre => {
@@ -57,10 +58,13 @@ function renderBooks(books) {
         const title = document.createElement("h5");
         title.textContent = book.title;
 
+        const publishedYear = document.createElement("h6");
+        publishedYear.textContent = book.published_year;
+
         const author = document.createElement("p");
         author.textContent = book.author;
 
-        cardBody.append(title, author, genreBadges);
+        cardBody.append(title, publishedYear, author, genreBadges);
         bookElement.append(img, cardBody);
         
         link.appendChild(bookElement);
