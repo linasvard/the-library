@@ -106,6 +106,7 @@ function renderReviews(reviews) {
         const rating = document.createElement("span");
         rating.className = "badge bg-primary mb-2";
         rating.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+        rating.ariaLabel = `Rating: ${review.rating} out of 5`;
 
         const content = document.createElement("p");
         content.className = "mb-1";
