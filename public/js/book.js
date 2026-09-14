@@ -42,14 +42,15 @@ function renderBook(book) {
     const img = document.createElement("img");
     img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649";
     img.alt = book.title;
-    img.className = "img-fluid";
+    img.width = 365;
+    img.className = "img-fluid mb-3 rounded shadow-sm";
 
     imgCol.appendChild(img);
 
 
     // Höger kolumn med information
     const infoCol = document.createElement("div");
-    infoCol.className = "col-md-8";
+    infoCol.className = "book-info-col col-md-8";
 
     const title = document.createElement("h1");
     title.className = "fw-bold";
