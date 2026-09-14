@@ -70,11 +70,13 @@ function renderBooks(books) {
     });
 }
 
+
 async function initBooks() {
     const books = await getBooks();
     if (books) {
         renderBooks(books);
     }
 }
+
 
 initBooks();
