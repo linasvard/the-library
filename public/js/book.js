@@ -1,5 +1,6 @@
 const bookTitle = document.getElementById("book-title");
 const bookDetail = document.getElementById("book-detail");
+const reviewList = document.getElementById("review-list");
 
 const params = new URLSearchParams(window.location.search);
 const bookId = params.get("id");
@@ -16,6 +17,7 @@ async function fetchBook() {
         const data = await response.json();
         if (response.ok) {
             renderBook(data.book);
+            renderReviews(data.reviews);
         } else {
             bookDetail.innerHTML = "";
             const errorMessage = document.createElement("p");
@@ -83,4 +85,38 @@ function renderBook(book) {
     bookDetail.append(imgCol, infoCol);
 }
 
+function renderReviews(reviews) {
+    reviewList.innerHTML = "";
+
+    if (reviews.length === 0) {
+        const noReviewsMessage = document.createElement("p");
+        noReviewsMessage.textContent = "No reviews yet.";
+        reviewList.appendChild(noReviewsMessage);
+        return;
+    }
+
+    reviews.forEach(review => {
+        const reviewCard = document.createElement("div");
+        reviewCard.className = "border-bottom pb-3 mb-3";
+
+        const name = document.createElement("h6");
+        name.className = "mb-1";
+        name.textContent = review.name;
+
+        const rating = document.createElement("span");
+        rating.className = "badge bg-primary mb-2";
+        rating.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+        const content = document.createElement("p");
+        content.className = "mb-1";
+        content.textContent = review.content;
+
+        const createdAt = document.createElement("small");
+        createdAt.className = "text-muted";
+        createdAt.textContent = `Posted: ${formateDate(review.created_at)}`;
+
+        reviewCard.append(name, rating, content, createdAt);
+        reviewList.appendChild(reviewCard);
+    })
+}
 fetchBook();
