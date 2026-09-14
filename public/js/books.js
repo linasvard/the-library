@@ -26,19 +26,36 @@ function renderBooks(books) {
     bookList.innerHTML = "";
     
     books.forEach(book => {
+
+        const link = document.createElement("a");
+        link.href = `book.html?id=${book.id}`;
+        link.className = "text-decoration-none text-dark";
+
         const bookElement = document.createElement("div");
 
-        const genreBadges = book.genres
-            .map(genre => `<span class="badge bg-secondary me-1">${genre}</span>`)
-            .join("");
-        
-        bookElement.innerHTML = `
-            <img src="${book.image}" alt="${book.title}" width="200">
-            <p>${genreBadges}</p>
-            <h3>${book.title}</h3>
-            <p>${book.author}</p>
-        `;
-        bookList.appendChild(bookElement);
+        const img = document.createElement("img");
+        img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649"; // placeholder image if book.image is null
+        img.alt = book.title;
+        img.width = 200;
+
+        const genreBadges = document.createElement("p");
+        book.genres.forEach(genre => {
+            const badge = document.createElement("span");
+            badge.className = "badge bg-secondary me-1";
+            badge.textContent = genre;
+            genreBadges.appendChild(badge);
+        });
+
+        const title = document.createElement("h5");
+        title.textContent = book.title;
+
+        const author = document.createElement("p");
+        author.textContent = book.author;
+
+        bookElement.append(img, genreBadges, title, author);
+        link.appendChild(bookElement);
+        bookList.appendChild(link);
+       
     });
 }
 
