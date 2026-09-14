@@ -27,16 +27,24 @@ function renderBooks(books) {
     
     books.forEach(book => {
 
+        const col = document.createElement("div");
+        col.className = "col-md-2 mb-3";
+
         const link = document.createElement("a");
-        link.href = `book.html?id=${book.id}`;
+        link.href = `book.html?id=${book._id}`;
         link.className = "text-decoration-none text-dark";
 
         const bookElement = document.createElement("div");
+        bookElement.className = "card h-100 border-0";
 
         const img = document.createElement("img");
         img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649"; // placeholder image if book.image is null
         img.alt = book.title;
         img.width = 200;
+        img.className = "card-img-top";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
 
         const genreBadges = document.createElement("p");
         book.genres.forEach(genre => {
@@ -52,9 +60,12 @@ function renderBooks(books) {
         const author = document.createElement("p");
         author.textContent = book.author;
 
-        bookElement.append(img, genreBadges, title, author);
+        cardBody.append(title, author, genreBadges);
+        bookElement.append(img, cardBody);
+        
         link.appendChild(bookElement);
-        bookList.appendChild(link);
+        col.appendChild(link);
+        bookList.appendChild(col);
        
     });
 }
