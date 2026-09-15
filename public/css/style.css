@@ -17,6 +17,21 @@ body {
   padding: 0;
 }
 
+.btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 0px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
 .navbar {
   background-color: var(--primary-color);
   padding: 30px 0;
@@ -33,6 +48,7 @@ body {
   font-size: 9rem;
   font-weight: 900;
   margin-bottom: 20px;
+  margin-left: -0.5rem;
   width: 100%;
 }
 
@@ -63,13 +79,15 @@ body {
 .hero {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 40px 0;
+  padding: 30px 0;
   height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
+
+
 
 
 
@@ -87,6 +105,20 @@ body {
   font-size: 2rem;
   margin-right: 40px;
   font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.sub-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 20px;
   color: var(--secondary-color);
 }
 
@@ -109,3 +141,4 @@ body {
 .book-info-col {
   padding-left: 6rem;
 }
+
