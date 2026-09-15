@@ -7,6 +7,12 @@
   --font-main: "Roboto", sans-serif;
 }
 
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px 0;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: bold;
