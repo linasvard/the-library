@@ -1,38 +1,95 @@
-// 1. Create an addEventlistener for the login button on click. The buttons ID is "#login-btn"
-document.getElementById("login-btn").addEventListener("click", function(event) {
-    event.preventDefault();
-    // 2. SHould make a POST request to API_URL + "/auth/login", 
-    // with a body of {username: "username", password: "password"}. login credentials should be hardcoded.  
-    // And include "credentials: "include"
+const loginbox = document.getElementById("login-box");
+const registerbox = document.getElementById("register-box");
+const toggleAuthViewLink = document.getElementById("toggle-auth-view");
 
+function toggleViews(isRegistration = false) {
+    loginbox.classList.toggle("d-none");
+    registerbox.classList.toggle("d-none");
+    toggleAuthViewLink.textContent = loginbox.classList.contains("d-none")
+        ? "Already have an account? Log in here!"
+        : "Don't have an account? Register here!";
 
-    // 3. Use async/await and try/catch to handle the response and any errors that may occur. If the response is successful, console log the data returned from the server.
-    async function login() {
-        try {
-            const response = await fetch(API_URL + "/auth/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    username: "admin",
-                    password: "123"
-                }),
-                credentials: "include"
-            });
-            const data = await response.json();
-            // 4 On success, redirect to protected.html. On failure display an error message in #login-message
-            if (response.ok) {
-                window.location.href = "protected.html";
-            } else {
-                // 5. Make the error message display in a red fashioned label. Use bootstraps classes 
-                document.getElementById("login-message").className = "alert alert-danger";
-                document.getElementById("login-message").innerHTML = "Login failed. Please check your credentials";
-            }
-            console.log(data);
-        } catch (error) {
-            console.error("Error:", error);
+        if (document.getElementById("login-username")) document.getElementById("login-form").reset();
+        if (document.getElementById("register-username")) document.getElementById("register-form").reset();
+
+        document.getElementById("register-message").textContent = "";
+        document.getElementById("register-message").className = "";
+
+        if (!isRegistration) {
+            document.getElementById("login-message").textContent = "";
+            document.getElementById("login-message").className = "";
         }
+}
+
+toggleAuthViewLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  toggleViews(false);
+});
+
+// LOGIN
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("login-username").value;
+  const password = document.getElementById("login-password").value;
+  const messageDiv = document.getElementById("login-message");
+
+  try {
+    const response = await fetch(API_URL + "/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+        credentials: "include",
+      });
+
+    if (response.ok) {
+        window.location.href = "books.html";
+
+    } else {
+        const errorData = await response.json();
+        messageDiv.textContent = errorData.message || "Wrong username or password.";
+        messageDiv.className = "text-danger";
     }
-    login();
+
+  } catch (error) {
+    messageDiv.textContent = "Could not connect to the server.";
+    messageDiv.className = "text-danger";
+  }
+});
+
+// REGISTER
+document.getElementById("register-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("register-username").value;
+  const password = document.getElementById("register-password").value;
+  const messageDiv = document.getElementById("register-message");
+
+  try {
+    const response = await fetch(API_URL + "/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+        credentials: "include",
+      });
+
+    if (response.ok) {
+        const loginMessageDiv = document.getElementById("login-message");
+        loginMessageDiv.textContent = "Registration successful! Please log in.";
+        loginMessageDiv.className = "text-success";
+
+        toggleViews(true);
+
+    } else {
+        const errorData = await response.json();
+        messageDiv.textContent = errorData.message || "Registration failed.";
+        messageDiv.className = "text-danger";
+    }
+
+  } catch (error) {
+    messageDiv.textContent = "Could not connect to the server.";
+    messageDiv.className = "text-danger";
+  }
 });
