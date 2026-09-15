@@ -28,7 +28,7 @@ function renderBooks(books) {
     books.forEach(book => {
 
         const col = document.createElement("div");
-        col.className = "col-md-2 mb-3";
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4";
 
         const link = document.createElement("a");
         link.href = `book.html?id=${book._id}`;
@@ -50,7 +50,7 @@ function renderBooks(books) {
         const genreBadges = document.createElement("p");
         book.genres.forEach(genre => {
             const badge = document.createElement("span");
-            badge.className = "badge bg-secondary me-1";
+            badge.className = "badge me-1";
             badge.textContent = genre;
             genreBadges.appendChild(badge);
         });
@@ -64,7 +64,7 @@ function renderBooks(books) {
         const author = document.createElement("p");
         author.textContent = book.author;
 
-        cardBody.append(title, publishedYear, author, genreBadges);
+        cardBody.append(genreBadges, title, author, publishedYear);
         bookElement.append(img, cardBody);
         
         link.appendChild(bookElement);

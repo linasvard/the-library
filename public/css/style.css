@@ -1,6 +1,7 @@
 :root {
-  --primary-color: #FC0;
-  --secondary-color: #000;
+  --primary-color: rgb(255, 204, 0);
+  --secondary-color: rgb(0, 0, 0);
+  --third-color: rgb(255, 255, 255);
   --font-main: "Roboto", sans-serif;
 }
 
@@ -138,6 +139,13 @@ body {
   font-weight: 300;
   margin-bottom: 20px;
   color: var(--secondary-color);
+}
+
+.badge {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 8px 12px;
+  border-radius: 0;
 }
 
 .message {
