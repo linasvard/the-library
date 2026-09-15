@@ -35,13 +35,13 @@ function renderBooks(books) {
         link.className = "text-decoration-none text-dark";
 
         const bookElement = document.createElement("div");
-        bookElement.className = "card h-100 border-0";
+        bookElement.className = "h-100 border-0";
 
         const img = document.createElement("img");
         img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649"; // placeholder image if book.image is null
         img.alt = book.title;
         img.width = 200;
-        img.className = "card-img-top";
+        img.className = "card-img-top card border-0";
 
         const cardBody = document.createElement("div");
         cardBody.className = "card-body p-0 pt-2";

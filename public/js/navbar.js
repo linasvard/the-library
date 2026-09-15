@@ -4,7 +4,7 @@ const initHeader = document.getElementById('init-header');
 initHeader.innerHTML = `
   <nav class="navbar navbar-expand-lg">
     <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="#">the library.</a>
+      <a class="navbar-brand" href="books.html">the library.</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

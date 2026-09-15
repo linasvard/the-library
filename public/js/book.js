@@ -39,7 +39,7 @@ function renderBook(book) {
 
     // Vänster kolumn med bild
     const imgCol = document.createElement("div");
-    imgCol.className = "col-md-4";
+    imgCol.className = "col-md-6 d-flex justify-content-space-between align-items-start";
 
     const img = document.createElement("img");
     img.src = book.image || "https://store.bookbaby.com/Bookshop/images/OnePageBookCoverImage.jpg?BookID=BK90049649";
@@ -52,11 +52,12 @@ function renderBook(book) {
 
     // Höger kolumn med information
     const infoCol = document.createElement("div");
-    infoCol.className = "book-info-col col-md-8";
+    infoCol.className = "book-info-col col-md-6";
 
     const title = document.createElement("h1");
-    title.className = "fw-bold";
+    title.className = "fw-bold book-heading";
     title.textContent = book.title;
+    title.style.color = "var(--secondary-color)";
 
     const author = document.createElement("h5");
     author.className = "text-muted mb-4";
@@ -70,17 +71,24 @@ function renderBook(book) {
     genresParagraph.className = "mt-4";
     book.genres.forEach(genre => {
         const badge = document.createElement("span");
-        badge.className = "badge bg-secondary me-1";
+        badge.className = "badge me-1";
         badge.textContent = genre;
         genresParagraph.appendChild(badge);
     });
+
+    const backButton = document.createElement("a");
+    backButton.href = "books.html";
+    backButton.className = "btn mt-5 back-btn";
+    backButton.textContent = "← Back to books";
+
+    infoCol.appendChild(backButton);
 
     const publishedYear = document.createElement("p");
     publishedYear.className = "text-muted mb-4";
     publishedYear.textContent = `Published: ${book.published_year}`;
 
 
-    infoCol.append(title, author, description, genresParagraph, publishedYear);
+    infoCol.append(title, author, description, genresParagraph, publishedYear, backButton);
 
     bookDetail.append(imgCol, infoCol);
 }
