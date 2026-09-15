@@ -2,6 +2,8 @@
   --primary-color: rgb(255, 204, 0);
   --secondary-color: rgb(0, 0, 0);
   --third-color: rgb(255, 255, 255);
+  --danger-color: rgb(255, 208, 208);
+  --danger-color-hover: rgb(154, 0, 0);
   --font-main: "Roboto", sans-serif;
 }
 
@@ -200,4 +202,32 @@ body {
 
   }
 
+}
+
+.edit-btn {
+  background-color: transparent;
+  font-weight: bold;
+
+  &:hover {
+    color: var(--third-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+  }
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+  color: var(--danger-color-hover);
+  border: 1px solid var(--danger-color-hover);
+  border-radius: 0px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--third-color);
+    background-color: var(--danger-color-hover);
+    border: 1px solid var(--danger-color-hover);
+  }
 }
