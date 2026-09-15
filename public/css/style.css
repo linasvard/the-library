@@ -23,6 +23,10 @@ body {
 
 }
 
+.hero-container {
+  margin-top: -9vh; /* Flyttar upp en aning */
+}
+
 .hero-title {
   position: relative;
   letter-spacing: -0.2rem;
@@ -37,11 +41,19 @@ body {
   top: 9.5rem;
   left: 0.4rem;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 200;
   margin-bottom: 20px;
   color: var(--secondary-color);
   letter-spacing: 0rem;
   
+}
+
+.hero-subtitle {
+  text-align: right;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 70px;
 }
 
 .the-library {
@@ -51,8 +63,12 @@ body {
 .hero {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 60px 0;
-  height: 60vh;
+  padding: 40px 0;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 
