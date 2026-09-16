@@ -44,7 +44,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
       });
 
     if (response.ok) {
-        window.location.href = "books.html";
+        window.location.href = "index.html";
 
     } else {
         const errorData = await response.json();

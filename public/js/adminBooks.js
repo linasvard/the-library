@@ -19,7 +19,7 @@ async function getAdminBooks() {
         });
 
         if (response.status === 401 || response.status === 403) { // Hanterar icke-auktoriserad åtkomst och omdirigerar användaren till inloggningssidan
-            window.location.href = "index.html?error=unauthorized";
+            window.location.href = "login.html?error=unauthorized";
             return;
         }
 

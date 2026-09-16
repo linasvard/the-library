@@ -77,7 +77,7 @@ function renderBook(book) {
     });
 
     const backButton = document.createElement("a");
-    backButton.href = "books.html";
+    backButton.href = "index.html";
     backButton.className = "btn mt-5 back-btn";
     backButton.textContent = "← Back to books";
 
