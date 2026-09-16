@@ -241,5 +241,71 @@ cancelEditBtn.addEventListener("click", () => {
     resetForm();
 });
 
+async function getAdminUsers() {
+    try {
+        const response = await fetch(API_URL + "/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: "include"
+        });
+
+        const usersData = await response.json();
+        if (response.ok) {
+            return usersData;
+        }
+    } catch (error) {
+        console.error("Error fetching users data:", error);
+    }
+}
+
+function renderAdminUsers(usersTable) {
+    const userTableBody = document.getElementById("admin-user-table");
+    if (!userTableBody) return;
+
+    userTableBody.innerHTML = usersTable.map(user => `
+        <tr>
+            <td>${user._id}</td>
+            <td>${user.username}</td>
+            <td>${user.is_admin}</td>
+            <td>${user.created_at ? formateDate(user.created_at) : "-"}</td>
+            <td>
+                <button class="delete-btn" onclick="deleteUser('${user._id}')">Delete User</button>
+            </td>
+        </tr>
+    `).join("");
+}
+
+async function deleteUser(userId) {
+    if (!confirm("Are you sure you want to delete this user?")) return;
+
+    try {
+        const response = await fetch(API_URL + `/users/${userId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: "include"
+        });
+
+        if (response.ok) {
+            loadAdminUsers();
+        } else {
+            alert("Error deleting user.");
+        }
+    } catch (error) {
+        console.error("Server error.", error);
+    }
+}
+
+async function loadAdminUsers() {
+    const usersData = await getAdminUsers();
+    if (usersData) {
+        renderAdminUsers(usersData);
+    }
+}
+
 loadAdminBooks();
 loadGenreOptions();
+loadAdminUsers();
