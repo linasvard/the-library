@@ -4,17 +4,17 @@ const initFooter = document.getElementById('init-footer')
 initHeader.innerHTML = `
   <nav class="navbar navbar-expand-lg">
     <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="books.html">the library.</a>
+      <a class="navbar-brand" href="index.html">the library.</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html" id="login-link">Log in</a>
+            <a class="nav-link" href="login.html" id="login-link">Log in</a>
           </li>
           <li class="nav-item" id="admin-link-item">
-            <a class="nav-link" href="admin-books.html">Admin</a>
+            <a class="nav-link" href="admin.html">Admin</a>
           </li>
         </ul>
       </div>
@@ -28,13 +28,13 @@ initFooter.innerHTML = `
       <p class="mb-0"><span class="fw-bold">&copy; 2026 The Library.</span> An API project done by students at Medieinstitutet.</p>
       <ul class="navbar-nav d-flex flex-row">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="books.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link" href="index.html" id="login-link-footer">Log in</a>
+          <a class="nav-link" href="login.html" id="login-link-footer">Log in</a>
         </li>
         <li class="nav-item ms-3" id="admin-link-item-footer">
-          <a class="nav-link" href="admin-books.html">Admin</a>
+          <a class="nav-link" href="admin.html">Admin</a>
         </li>
       </ul>
     </div>
@@ -63,7 +63,7 @@ async function logout() {
         });
 
         if (response.ok) {
-            window.location.href = "books.html";
+            window.location.href = "index.html";
         }
     } catch (error) {
         console.error("Error logging out:", error);
