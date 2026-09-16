@@ -113,7 +113,14 @@ p {
 }
 
 
+.admin-panel {
+  background-color: #EFEFEF;
+}
 
+.admin-books {
+  background-color: var(--third-color);
+  padding: 30px 0;
+}
 
 
 .nav-link {
