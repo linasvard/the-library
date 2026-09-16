@@ -23,7 +23,7 @@ initHeader.innerHTML = `
 `;
 
 initFooter.innerHTML = `
-  <footer class="mt-5 py-5">
+  <footer class="py-5">
     <div class="container d-flex justify-content-between align-items-center">
       <p class="mb-0"><span class="fw-bold">&copy; 2026 The Library.</span> An API project done by students at Medieinstitutet.</p>
       <ul class="navbar-nav d-flex flex-row">

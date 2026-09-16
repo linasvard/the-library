@@ -70,7 +70,7 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         createdAt.appendChild(createdAtSmall);
 
         const editBtn = document.createElement("button");
-        editBtn.className = "btn edit-btn btn-sm btn-outline-primary w-100 mb-1";
+        editBtn.className = "btn edit-btn btn-sm btn-outline-primary w-100 mb-1 edit-btn";
         editBtn.textContent = "Edit";
         editBtn.addEventListener("click", () => editBook(book));
 

@@ -4,6 +4,7 @@
   --third-color: rgb(255, 255, 255);
   --danger-color: rgb(255, 208, 208);
   --danger-color-hover: rgb(154, 0, 0);
+  --faded-grey: #EFEFEF;
   --font-main: "Roboto", sans-serif;
 }
 
@@ -35,25 +36,80 @@ body {
   padding: 0;
 }
 
-p {
-  max-width: 600px;
+label {
+  font-weight: bold;
+  color: var(--secondary-color);
 }
 
-.btn {
+.form-control::placeholder {
+  color: var(--secondary-color);
+  opacity: 0.4;
+  font-size: 0.95rem;
+}
+
+textarea {
+  height: 180px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select.form-select,
+textarea.form-control {
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+}
+
+.create-btn, 
+.genre-btn, 
+.cancel-btn,
+.browse-btn,
+.submit-btn,
+.edit-btn {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  max-width: 200px;
+}
+
+.genre-btn {
+  background-color: var(--third-color);
+}
+
+
+.submit-btn,
+.create-btn {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+
+.submit-btn:hover,
+.create-btn:hover,
+.genre-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.browse-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+
+
+.btn {
   border: 1px solid var(--secondary-color);
   border-radius: 0px;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  max-width: 200px;
+  width: 100%;
 }
 
-.btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
 
 .navbar {
   background-color: var(--primary-color);
@@ -93,6 +149,7 @@ p {
   font-style: italic;
   font-weight: 300;
   margin-top: 70px;
+  
 }
 
 .the-library {
@@ -114,6 +171,14 @@ p {
 
 
 
+.admin-panel {
+  background-color: var(--faded-grey);
+}
+
+.admin-books {
+  background-color: var(--third-color);
+  padding: 30px 0;
+}
 
 
 .nav-link {
@@ -254,3 +319,44 @@ p {
 .hidden {
   display: none;
 }
+
+.login-sign-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  min-height: calc(100vh - 320px);
+}
+
+.login-sign-bg {
+  background-color: var(--primary-color);
+}
+
+.login-btn, .register-btn {
+  align-self: center;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  border: 1px solid var(--secondary-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+
+}
+.review-section {
+  background-color: var(--faded-grey);
+}
+
+.book-section {
+  margin-bottom: 60px;
+}
+
+

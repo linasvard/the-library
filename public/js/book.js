@@ -105,7 +105,7 @@ function renderReviews(reviews) {
 
     reviews.forEach(review => {
         const reviewCard = document.createElement("div");
-        reviewCard.className = "border-bottom pb-3 mb-3";
+        reviewCard.className = "border-bottom pb-4 mb-3";
 
         const name = document.createElement("h6");
         name.className = "mb-1";
