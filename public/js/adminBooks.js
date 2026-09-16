@@ -2,6 +2,9 @@ const adminBookList = document.getElementById("admin-book-list");
 const createBookForm = document.getElementById("create-book-form");
 const genreDropdownMenu = document.getElementById("genre-dropdown-menu");
 const genreDropdownBtn = document.getElementById("genre-dropdown-btn");
+const bookEditIdInput = document.getElementById("book-edit-id");
+const formSubmitBtn = document.getElementById("form-submit-btn");
+const cancelEditBtn = document.getElementById("cancel-edit-btn");
 
 async function getAdminBooks() {
     try {
@@ -140,6 +143,7 @@ genreDropdownMenu.addEventListener("change", () => {
 createBookForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const editId = bookEditIdInput.value;
     const title = document.getElementById("book-title").value.trim();
     const description = document.getElementById("book-description").value.trim();
     const author = document.getElementById("book-author").value.trim();
@@ -153,9 +157,12 @@ createBookForm.addEventListener("submit", async (e) => {
         return;
     }
 
+    const url = editId ? API_URL + `/books/${editId}` : API_URL + "/books";
+    const method = editId ? "PATCH" : "POST";
+
     try {
-        const response = await fetch(API_URL + "/books", {
-            method: "POST",
+        const response = await fetch(url, {
+            method: method,
             headers: {
                 "Content-Type": "application/json",
             },
@@ -175,18 +182,57 @@ createBookForm.addEventListener("submit", async (e) => {
             createBookForm.reset();
             document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
             genreDropdownBtn.textContent = "Select genres";
+            resetForm();
+
             document.getElementById("create-message").className = "alert alert-success";
-            document.getElementById("create-message").innerHTML = "Book created successfully!";
+            document.getElementById("create-message").innerHTML = editId ? "Book updated successfully!" : "Book created successfully!";
             loadAdminBooks();
         } else {
             document.getElementById("create-message").className = "alert alert-danger";
-            document.getElementById("create-message").innerHTML = `Error: ${data.error || "An error occurred while creating the book."}`;
+            document.getElementById("create-message").innerHTML = `Error: ${data.error || "An error occurred."}`;
         }
     } catch (error) {
-        console.error("Error creating book:", error);
         document.getElementById("create-message").className = "alert alert-danger";
-        document.getElementById("create-message").innerHTML = "An error occurred while creating the book. Please try again later.";
+        document.getElementById("create-message").innerHTML = "An error occurred. Please try again later.";
     }
+});
+
+// --- Edit book ---
+
+function editBook(book) {
+    bookEditIdInput.value = book._id;
+    document.getElementById("book-title").value = book.title;
+    document.getElementById("book-description").value = book.description;
+    document.getElementById("book-author").value = book.author;
+    document.getElementById("book-image").value = book.image || "";
+    document.getElementById("book-published-year").value = book.published_year;
+
+    document.querySelectorAll(".genre-checkbox").forEach(cb => {
+        cb.checked = book.genres.includes(cb.value);
+    });
+
+    const selectedGenres = getSelectedGenres();
+    genreDropdownBtn.textContent = selectedGenres.length > 0
+        ? `${selectedGenres.length} genre${selectedGenres.length > 1 ? 's' : ''} selected`
+        : "Select genres";
+
+    formSubmitBtn.textContent = "Update";
+    cancelEditBtn.classList.remove("d-none");
+    createBookForm.scrollIntoView({ behavior: "smooth" });
+}   
+
+function resetForm() {
+    bookEditIdInput.value = "";
+    formSubmitBtn.textContent = "Create";
+    cancelEditBtn.classList.add("d-none");
+    createBookForm.reset();
+}
+
+cancelEditBtn.addEventListener("click", () => {
+    createBookForm.reset();
+    document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
+    genreDropdownBtn.textContent = "Select genres";
+    resetForm();
 });
 
 loadAdminBooks();
