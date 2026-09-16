@@ -36,10 +36,6 @@ body {
   padding: 0;
 }
 
-p {
-  max-width: 600px;
-}
-
 label {
   font-weight: bold;
   color: var(--secondary-color);
@@ -147,6 +143,7 @@ textarea.form-control {
   font-style: italic;
   font-weight: 300;
   margin-top: 70px;
+  
 }
 
 .the-library {
