@@ -71,11 +71,17 @@ textarea.form-control {
 .genre-btn, 
 .cancel-btn,
 .browse-btn,
-.submit-btn {
+.submit-btn,
+.edit-btn {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   max-width: 200px;
 }
+
+.genre-btn {
+  background-color: var(--third-color);
+}
+
 
 .submit-btn,
 .create-btn {
@@ -84,11 +90,14 @@ textarea.form-control {
 }
 
 .submit-btn:hover,
-.create-btn:hover {
+.create-btn:hover,
+.genre-btn:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border: 1px solid var(--primary-color);
 }
+
+
 
 .btn {
   border: 1px solid var(--secondary-color);
