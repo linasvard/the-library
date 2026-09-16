@@ -348,3 +348,8 @@ textarea.form-control {
   width: 100%;
 
 }
+.review-section {
+  background-color: var(--faded-grey);
+}
+
+
