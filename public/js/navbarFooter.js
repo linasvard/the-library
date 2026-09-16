@@ -11,9 +11,6 @@ initHeader.innerHTML = `
       <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="books.html">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="index.html" id="login-link">Log in</a>
           </li>
           <li class="nav-item" id="admin-link-item">

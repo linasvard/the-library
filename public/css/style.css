@@ -250,3 +250,7 @@ p {
     border: 1px solid var(--danger-color-hover);
   }
 }
+
+.hidden {
+  display: none;
+}
