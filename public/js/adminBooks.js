@@ -64,12 +64,17 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         
         createdAt.appendChild(createdAtSmall);
 
+        const editBtn = document.createElement("a");
+        editBtn.className = "btn edit-btn btn-sm btn-outline-primary w-100 mb-1";
+        editBtn.href = `edit-book.html?id=${book._id}`;
+        editBtn.textContent = "Edit";
+
         const deleteBtn = document.createElement("button");
-        deleteBtn.className = "btn btn-sm btn-outline-danger w-100";
+        deleteBtn.className = "btn delete-btn btn-sm btn-outline-danger w-100";
         deleteBtn.textContent = "Delete";
         deleteBtn.addEventListener("click", () => deleteBook(book._id));
 
-        cardBody.append(title, author, createdAt, deleteBtn);
+        cardBody.append(title, author, createdAt, editBtn, deleteBtn);
         card.append(img, cardBody);
         col.appendChild(card);
         adminBookList.appendChild(col);
