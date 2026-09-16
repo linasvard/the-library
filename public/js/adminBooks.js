@@ -5,6 +5,8 @@ const genreDropdownBtn = document.getElementById("genre-dropdown-btn");
 const bookEditIdInput = document.getElementById("book-edit-id");
 const formSubmitBtn = document.getElementById("form-submit-btn");
 const cancelEditBtn = document.getElementById("cancel-edit-btn");
+const createHeading = document.getElementById("create-heading");
+const editHeading = document.getElementById("edit-heading");
 
 async function getAdminBooks() {
     try {
@@ -216,13 +218,17 @@ function editBook(book) {
         ? `${selectedGenres.length} genre${selectedGenres.length > 1 ? 's' : ''} selected`
         : "Select genres";
 
+    createHeading.classList.add("d-none");
+    editHeading.classList.remove("d-none");    
     formSubmitBtn.textContent = "Update";
     cancelEditBtn.classList.remove("d-none");
-    createBookForm.scrollIntoView({ behavior: "smooth" });
+    editHeading.scrollIntoView({ behavior: "smooth" });
 }   
 
 function resetForm() {
     bookEditIdInput.value = "";
+    createHeading.classList.remove("d-none");
+    editHeading.classList.add("d-none");
     formSubmitBtn.textContent = "Create";
     cancelEditBtn.classList.add("d-none");
     createBookForm.reset();
