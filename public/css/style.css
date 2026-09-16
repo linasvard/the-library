@@ -352,4 +352,8 @@ textarea.form-control {
   background-color: var(--faded-grey);
 }
 
+.book-section {
+  margin-bottom: 60px;
+}
+
 

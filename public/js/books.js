@@ -44,7 +44,7 @@ function renderBooks(books) {
         img.className = "card-img-top card border-0";
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body p-0 pt-2";
+        cardBody.className = "card-body p-0 pt-3";
 
 
         const genreBadges = document.createElement("p");
