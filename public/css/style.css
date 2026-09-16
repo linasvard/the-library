@@ -4,6 +4,7 @@
   --third-color: rgb(255, 255, 255);
   --danger-color: rgb(255, 208, 208);
   --danger-color-hover: rgb(154, 0, 0);
+  --faded-grey: #EFEFEF;
   --font-main: "Roboto", sans-serif;
 }
 
@@ -54,6 +55,16 @@ textarea {
   height: 180px;
 }
 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+}
+
 .btn {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -62,7 +73,7 @@ textarea {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  max-width: 200px;
+  width: 100%;
 }
 
 .btn:hover {
@@ -130,7 +141,7 @@ textarea {
 
 
 .admin-panel {
-  background-color: #EFEFEF;
+  background-color: var(--faded-grey);
 }
 
 .admin-books {
@@ -276,4 +287,36 @@ textarea {
 
 .hidden {
   display: none;
+}
+
+.login-sign-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  min-height: calc(100vh - 320px);
+}
+
+.login-sign-bg {
+  background-color: var(--primary-color);
+}
+
+.login-btn, .register-btn {
+  align-self: center;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  border: 1px solid var(--secondary-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+
 }
