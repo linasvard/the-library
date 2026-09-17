@@ -107,7 +107,7 @@ async function deleteBook(bookId) {
         });
 
         if (response.ok) {
-            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.className = "alert alert-success";
             deleteFeedback.innerHTML = "Book deleted successfully!";
             setTimeout(() => { deleteFeedback.innerHTML = ""; deleteFeedback.className = ""; }, 3000);
             loadAdminBooks();
