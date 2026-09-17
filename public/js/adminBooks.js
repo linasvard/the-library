@@ -196,6 +196,8 @@ createBookForm.addEventListener("submit", async (e) => {
             })
         });
 
+        const createEditMessage = document.getElementById("create-message");
+
         const data = await response.json();
         if (response.ok) {
             createBookForm.reset();
@@ -203,16 +205,17 @@ createBookForm.addEventListener("submit", async (e) => {
             genreDropdownBtn.textContent = "Select genre(s)";
             resetForm();
 
-            document.getElementById("create-message").className = "alert alert-success";
-            document.getElementById("create-message").innerHTML = editId ? "Book updated successfully!" : "Book created successfully!";
+            createEditMessage.className = "alert alert-success";
+            createEditMessage.innerHTML = editId ? "Book updated successfully!" : "Book created successfully!";
+            setTimeout(() => { createEditMessage.innerHTML = ""; createEditMessage.className = ""; }, 3000);
             loadAdminBooks();
         } else {
-            document.getElementById("create-message").className = "alert alert-danger";
-            document.getElementById("create-message").innerHTML = `Error: ${data.error || "An error occurred."}`;
+            createEditMessage.className = "alert alert-danger";
+            createEditMessage.innerHTML = `Error: ${data.error || "An error occurred."}`;
         }
     } catch (error) {
-        document.getElementById("create-message").className = "alert alert-danger";
-        document.getElementById("create-message").innerHTML = "An error occurred. Please try again later.";
+        createEditMessage.className = "alert alert-danger";
+        createEditMessage.innerHTML = "An error occurred. Please try again later.";
     }
 });
 
