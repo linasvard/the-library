@@ -28,7 +28,7 @@ function renderBooks(books) {
     books.forEach(book => {
 
         const col = document.createElement("div");
-        col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4";
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-5";
 
         const link = document.createElement("a");
         link.href = `book.html?id=${book._id}`;
