@@ -98,7 +98,7 @@ function renderReviews(reviews) {
 
     if (reviews.length === 0) {
         const noReviewsMessage = document.createElement("p");
-        noReviewsMessage.textContent = "No reviews yet.";
+        noReviewsMessage.textContent = "Give us your view on the book.";
         reviewList.appendChild(noReviewsMessage);
         return;
     }
@@ -112,7 +112,7 @@ function renderReviews(reviews) {
         name.textContent = review.name;
 
         const rating = document.createElement("span");
-        rating.className = "badge bg-primary mb-2";
+        rating.className = "rating-badge mb-2";
         rating.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
         rating.ariaLabel = `Rating: ${review.rating} out of 5`;
 
