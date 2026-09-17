@@ -32,12 +32,12 @@ export const login = async (req: Request, res: Response) => {
 
             // When true, the cookie is only sent over HTTPS connections.
             // We enable this in production (where we use HTTPS) but disable it locally (HTTP).
-            secure: false, 
+            secure: process.env.NODE_ENV === 'production', 
 
             // Controls when the cookie is sent with cross-site requests.
             // 'none': Cookie is sent on all cross-origin requests (required when frontend and API are on different domains in production). Requires secure: true.
             // 'lax': Cookie is sent on same-site requests and top-level navigations (safe default for local development).
-            sameSite: 'lax',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
 
             maxAge: 1000 * 60 * 60 * 24 * 7 
         })
@@ -82,7 +82,10 @@ export const register = async (req: Request, res: Response) => {
 
 export const logout = async (req: Request, res: Response) => {
    try { 
-    res.clearCookie('accessToken')
+    res.clearCookie('accessToken', {
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+})
     res.json({message: "You are logged out"})
     } catch (e) {
         console.log(e)
