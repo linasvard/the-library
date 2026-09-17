@@ -87,9 +87,12 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
 }
 
 async function deleteBook(bookId) {
+    
+    const deleteFeedback = document.getElementById("deleted-message");
+    const adminBookHeading = document.getElementById("admin-book-view");
 
     try {
-        await fetch(API_URL + `/books/${bookId}`, {
+        const response = await fetch(API_URL + `/books/${bookId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -97,9 +100,22 @@ async function deleteBook(bookId) {
             credentials: "include"
         });
 
-        loadAdminBooks();
+        if (response.ok) {
+            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.innerHTML = "Book deleted successfully!";
+            setTimeout(() => { deleteFeedback.innerHTML = ""; deleteFeedback.className = ""; }, 3000);
+            loadAdminBooks();
+            adminBookHeading.scrollIntoView({ behavior: "smooth" });
+
+        } else {
+            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.innerHTML = "Error deleting book.";
+        }
+
     } catch (error) {
         console.error("Error deleting book:", error);
+        deleteFeedback.className = "alert alert-danger";
+        deleteFeedback.innerHTML = "An error occurred while deleting the book. Please try again later.";
     }
 }
 
