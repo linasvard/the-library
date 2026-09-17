@@ -51,7 +51,8 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         img.className = "card-img-top";
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "card-body d-flex flex-column";
+        cardBody.style.maxHeight = "300px"; // Set a max height for the card body to ensure consistent card sizes
 
         const title = document.createElement("h5");
         title.className = "card-title";
@@ -67,7 +68,10 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         createdAtSmall.className = "text-secondary";
         createdAtSmall.textContent = book.created_at ? `Created at: ${formateDate(book.created_at)}` : "Created at: -";
         
-        createdAt.appendChild(createdAtSmall);
+       
+        const buttonGroup = document.createElement("div");
+        buttonGroup.className = "mt-auto"; 
+
 
         const editBtn = document.createElement("button");
         editBtn.className = "btn edit-btn btn-sm btn-outline-primary w-100 mb-1 edit-btn";
@@ -79,10 +83,12 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
         deleteBtn.textContent = "Delete";
         deleteBtn.addEventListener("click", () => deleteBook(book._id));
 
-        cardBody.append(title, author, createdAt, editBtn, deleteBtn);
+        buttonGroup.append(editBtn, deleteBtn);
+        cardBody.append(title, author, createdAt, buttonGroup);
         card.append(img, cardBody);
         col.appendChild(card);
         adminBookList.appendChild(col);
+        createdAt.appendChild(createdAtSmall);
     })
 }
 
@@ -101,7 +107,7 @@ async function deleteBook(bookId) {
         });
 
         if (response.ok) {
-            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.className = "alert alert-success";
             deleteFeedback.innerHTML = "Book deleted successfully!";
             setTimeout(() => { deleteFeedback.innerHTML = ""; deleteFeedback.className = ""; }, 3000);
             loadAdminBooks();
