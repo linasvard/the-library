@@ -79,22 +79,13 @@ function handleAuthLinkClick(event, isLoggedIn) {
 
 async function updateNavForAuthStatus() {
     const isLoggedIn = await checkLoginStatus();
-
-    const adminLinkItem = document.getElementById("admin-link-item");
-    const adminLinkItemFooter = document.getElementById("admin-link-item-footer");
     const loginLink = document.getElementById("login-link");
     const loginLinkFooter = document.getElementById("login-link-footer");
 
     if (isLoggedIn) {
-        adminLinkItem.classList.remove("hidden");
-        adminLinkItemFooter.classList.remove("hidden");
-
         loginLink.textContent = "Log out";
         loginLinkFooter.textContent = "Log out";
     } else {
-        adminLinkItem.classList.add("hidden");
-        adminLinkItemFooter.classList.add("hidden");
-
         loginLink.textContent = "Log in";
         loginLinkFooter.textContent = "Log in";
     }
