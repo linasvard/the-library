@@ -87,8 +87,12 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
 }
 
 async function deleteBook(bookId) {
+    
+    const deleteFeedback = document.getElementById("deleted-message");
+    const adminBookHeading = document.getElementById("admin-book-view");
+
     try {
-        await fetch(API_URL + `/books/${bookId}`, {
+        const response = await fetch(API_URL + `/books/${bookId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -96,9 +100,22 @@ async function deleteBook(bookId) {
             credentials: "include"
         });
 
-        loadAdminBooks();
+        if (response.ok) {
+            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.innerHTML = "Book deleted successfully!";
+            setTimeout(() => { deleteFeedback.innerHTML = ""; deleteFeedback.className = ""; }, 3000);
+            loadAdminBooks();
+            adminBookHeading.scrollIntoView({ behavior: "smooth" });
+
+        } else {
+            deleteFeedback.className = "alert alert-danger";
+            deleteFeedback.innerHTML = "Error deleting book.";
+        }
+
     } catch (error) {
         console.error("Error deleting book:", error);
+        deleteFeedback.className = "alert alert-danger";
+        deleteFeedback.innerHTML = "An error occurred while deleting the book. Please try again later.";
     }
 }
 
@@ -137,7 +154,7 @@ genreDropdownMenu.addEventListener("change", () => {
     const selected = getSelectedGenres();
     genreDropdownBtn.textContent = selected.length > 0
         ? `${selected.length} genre${selected.length > 1 ? 's' : ''} selected`
-        : "Select genres";
+        : "Select genre(s)";
 });
 
 // --- Skapa bok ---
@@ -179,23 +196,26 @@ createBookForm.addEventListener("submit", async (e) => {
             })
         });
 
+        const createEditMessage = document.getElementById("create-message");
+
         const data = await response.json();
         if (response.ok) {
             createBookForm.reset();
             document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
-            genreDropdownBtn.textContent = "Select genres";
+            genreDropdownBtn.textContent = "Select genre(s)";
             resetForm();
 
-            document.getElementById("create-message").className = "alert alert-success";
-            document.getElementById("create-message").innerHTML = editId ? "Book updated successfully!" : "Book created successfully!";
+            createEditMessage.className = "alert alert-success";
+            createEditMessage.innerHTML = editId ? "Book updated successfully!" : "Book created successfully!";
+            setTimeout(() => { createEditMessage.innerHTML = ""; createEditMessage.className = ""; }, 3000);
             loadAdminBooks();
         } else {
-            document.getElementById("create-message").className = "alert alert-danger";
-            document.getElementById("create-message").innerHTML = `Error: ${data.error || "An error occurred."}`;
+            createEditMessage.className = "alert alert-danger";
+            createEditMessage.innerHTML = `Error: ${data.error || "An error occurred."}`;
         }
     } catch (error) {
-        document.getElementById("create-message").className = "alert alert-danger";
-        document.getElementById("create-message").innerHTML = "An error occurred. Please try again later.";
+        createEditMessage.className = "alert alert-danger";
+        createEditMessage.innerHTML = "An error occurred. Please try again later.";
     }
 });
 
@@ -216,7 +236,7 @@ function editBook(book) {
     const selectedGenres = getSelectedGenres();
     genreDropdownBtn.textContent = selectedGenres.length > 0
         ? `${selectedGenres.length} genre${selectedGenres.length > 1 ? 's' : ''} selected`
-        : "Select genres";
+        : "Select genre(s)";
 
     createHeading.classList.add("d-none");
     editHeading.classList.remove("d-none");    
@@ -237,7 +257,7 @@ function resetForm() {
 cancelEditBtn.addEventListener("click", () => {
     createBookForm.reset();
     document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
-    genreDropdownBtn.textContent = "Select genres";
+    genreDropdownBtn.textContent = "Select genre(s)";
     resetForm();
 });
 
