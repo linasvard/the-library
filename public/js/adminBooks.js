@@ -87,6 +87,7 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() istÃ
 }
 
 async function deleteBook(bookId) {
+
     try {
         await fetch(API_URL + `/books/${bookId}`, {
             method: "DELETE",
@@ -137,7 +138,7 @@ genreDropdownMenu.addEventListener("change", () => {
     const selected = getSelectedGenres();
     genreDropdownBtn.textContent = selected.length > 0
         ? `${selected.length} genre${selected.length > 1 ? 's' : ''} selected`
-        : "Select genres";
+        : "Select genre(s)";
 });
 
 // --- Skapa bok ---
@@ -183,7 +184,7 @@ createBookForm.addEventListener("submit", async (e) => {
         if (response.ok) {
             createBookForm.reset();
             document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
-            genreDropdownBtn.textContent = "Select genres";
+            genreDropdownBtn.textContent = "Select genre(s)";
             resetForm();
 
             document.getElementById("create-message").className = "alert alert-success";
@@ -216,7 +217,7 @@ function editBook(book) {
     const selectedGenres = getSelectedGenres();
     genreDropdownBtn.textContent = selectedGenres.length > 0
         ? `${selectedGenres.length} genre${selectedGenres.length > 1 ? 's' : ''} selected`
-        : "Select genres";
+        : "Select genre(s)";
 
     createHeading.classList.add("d-none");
     editHeading.classList.remove("d-none");    
@@ -237,7 +238,7 @@ function resetForm() {
 cancelEditBtn.addEventListener("click", () => {
     createBookForm.reset();
     document.querySelectorAll(".genre-checkbox").forEach(cb => cb.checked = false);
-    genreDropdownBtn.textContent = "Select genres";
+    genreDropdownBtn.textContent = "Select genre(s)";
     resetForm();
 });
 
