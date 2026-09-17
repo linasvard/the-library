@@ -355,6 +355,13 @@ textarea.form-control {
   background-color: var(--faded-grey);
 }
 
+.rating-badge {
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
 .book-section {
   margin-bottom: 60px;
 }
