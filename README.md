@@ -26,6 +26,12 @@ Jag tog på mig ansvaret av att göra books-delen. Nedan listas de generella pun
 #### Controllers
 - bookController.ts
 
+#### JavaScript
+- adminBooks.js
+- book.js
+- books.js
+- navbarFooter.js
+
 #### Data
 - genres.json
 

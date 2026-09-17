@@ -64,7 +64,7 @@ function renderAdminBooks(books) { // Bygga HTML DOMen i renderAdminBooks() ist√
         const createdAt = document.createElement("p");
         createdAt.className = "card-text";
         const createdAtSmall = document.createElement("small");
-        createdAtSmall.className = "text-muted";
+        createdAtSmall.className = "text-secondary";
         createdAtSmall.textContent = book.created_at ? `Created at: ${formateDate(book.created_at)}` : "Created at: -";
         
         createdAt.appendChild(createdAtSmall);
@@ -229,7 +229,7 @@ function resetForm() {
     bookEditIdInput.value = "";
     createHeading.classList.remove("d-none");
     editHeading.classList.add("d-none");
-    formSubmitBtn.textContent = "Create";
+    formSubmitBtn.textContent = "+ Create";
     cancelEditBtn.classList.add("d-none");
     createBookForm.reset();
 }
