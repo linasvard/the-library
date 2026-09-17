@@ -229,7 +229,7 @@ function resetForm() {
     bookEditIdInput.value = "";
     createHeading.classList.remove("d-none");
     editHeading.classList.add("d-none");
-    formSubmitBtn.textContent = "Create";
+    formSubmitBtn.textContent = "+ Create";
     cancelEditBtn.classList.add("d-none");
     createBookForm.reset();
 }
