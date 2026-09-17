@@ -60,7 +60,7 @@ function renderBook(book) {
     title.style.color = "var(--secondary-color)";
 
     const author = document.createElement("h5");
-    author.className = "text-muted mb-4";
+    author.className = "text-secondary mb-4";
     author.textContent = book.author;
 
     const description = document.createElement("p");
@@ -84,7 +84,7 @@ function renderBook(book) {
     infoCol.appendChild(backButton);
 
     const publishedYear = document.createElement("p");
-    publishedYear.className = "text-muted mb-4";
+    publishedYear.className = "text-secondary mb-4";
     publishedYear.textContent = `Published: ${book.published_year}`;
 
 
@@ -121,7 +121,7 @@ function renderReviews(reviews) {
         content.textContent = review.content;
 
         const createdAt = document.createElement("small");
-        createdAt.className = "text-muted";
+        createdAt.className = "text-secondary";
         createdAt.textContent = `Posted: ${formateDate(review.created_at)}`;
 
         reviewCard.append(name, rating, content, createdAt);
