@@ -1,5 +1,3 @@
-// Lina jobbar här :)
-
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import genresData from '../data/genres.json';
@@ -39,6 +37,5 @@ const BookSchema = new Schema({
     toJSON: { virtuals: true },
     toObject: { virtuals: true }
 });
-
 
 export default mongoose.model('books', BookSchema)

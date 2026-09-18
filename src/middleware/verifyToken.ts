@@ -14,6 +14,6 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
       return
     }
 
-    next() // makes the request move on to the next step in the process, in this case move on to greetingSpecific
+    next() // makes the request move on to the next step in the process
   })
 }
