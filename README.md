@@ -37,9 +37,9 @@ CLIENT_URL=http://localhost:3000
 
 4. (Valfritt) Importera exempeldata från `exports/`-mappen till din egen MongoDB:
 ```bash
-mongoimport --uri="din_connection_sträng" --collection=books --file=exports/books.json --jsonArray
-mongoimport --uri="din_connection_sträng" --collection=reviews --file=exports/reviews.json --jsonArray
-mongoimport --uri="din_connection_sträng" --collection=users --file=exports/users.json --jsonArray
+mongoimport --uri="din_connection_sträng" --collection=books --file=exports/book_db.books.json --jsonArray
+mongoimport --uri="din_connection_sträng" --collection=reviews --file=exports/book_db.reviews.json --jsonArray
+mongoimport --uri="din_connection_sträng" --collection=users --file=exports/book_db.users.json --jsonArray
 ```
 
 5. Starta servern:
