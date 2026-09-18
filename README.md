@@ -18,6 +18,7 @@
 
 [Marcus Yttermyr](https://github.com/Marcusey)
 
+-----
 
 ## Installation
 
@@ -68,6 +69,8 @@ Registrera en användare via ett POST-anrop till `/api/auth/register` (t.ex. via
 ```
 Logga sedan in via inloggningssidan i klienten med samma uppgifter.
 
+-----------
+
 
 ## Vad vi har gjort
 
@@ -91,7 +94,6 @@ Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
 * **`public/js/login.js`** – Skrivit JavaScript-logiken för inloggning, registrering, automatisk fälttömning, felhantering och dynamisk flikväxling.
 * **`public/js/adminBooks.js`** – Hämtat användardata från API:et och renderat tabellraderna live med `.map().join("")` samt byggt `deleteUser`-funktionen.
 
----
 
 ### Vad jag har gjort i projektet
 
