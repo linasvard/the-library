@@ -11,7 +11,54 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+## Installation
 
+1. Klona repot:
+```bash
+git clone https://github.com/linasvard/grupp-7-inlamning.git
+git clone 
+cd grupp-7-inlamning
+```
+
+2. Installera dependencies:
+```bash
+npm install
+```
+
+3. Skapa en `.env`-fil i projektets rot med följande innehåll:
+
+```bash
+JWT_SECRET=valfri_hemlig_sträng
+NODE_ENV=development
+MONGODB_URL=din_mongodb_connection_sträng
+CLIENT_URL=http://localhost:3000
+```
+
+
+4. (Valfritt) Importera exempeldata från `exports/`-mappen till din egen MongoDB:
+```bash
+mongoimport --uri="din_connection_sträng" --collection=books --file=exports/books.json --jsonArray
+mongoimport --uri="din_connection_sträng" --collection=reviews --file=exports/reviews.json --jsonArray
+mongoimport --uri="din_connection_sträng" --collection=users --file=exports/users.json --jsonArray
+```
+
+5. Starta servern:
+```bash
+npm run dev
+```
+
+6. Öppna `http://localhost:3000` i webbläsaren.
+
+### Skapa en admin-inloggning
+
+Registrera en användare via ett POST-anrop till `/api/auth/register` (t.ex. via Insomnia/Postman) med body:
+```json
+{
+    "username": "admin",
+    "password": "123"
+}
+```
+Logga sedan in via inloggningssidan i klienten med samma uppgifter.
 
 
 ## Made by
