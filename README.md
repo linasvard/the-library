@@ -5,6 +5,53 @@
 ### Ansvarsområde 1 - Users
 - [Filip Brandt](https://github.com/filip-brandt)
 
+Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
+
+## Filer jag har arbetat i
+
+### 💻 Backend
+* **`src/models/User.ts`** – Skapat Mongoose-schemat och modellen för användare i databasen.
+* **`src/controllers/authController.ts`** – Byggt auth-logik (`login`, `register`, `logout`) med lösenords-hashing (`bcrypt`), JWT-signering och cookie-hantering med robust `try/catch`.
+* **`src/controllers/userController.ts`** – Skapat alla CRUD-funktioner för användare (`fetchAllUsers`, `fetchUserById`, `updateUser`, `deleteUser`) och säkrat dem med `.select('-password')`.
+* **`src/routes/auth.ts`** – Definerat Express-routern och bundit `POST`-metoderna för inloggning, registrering och utloggning.
+* **`src/routes/users.ts`** – Kopplat ihop alla CRUD-anrop (`GET`, `PATCH`, `DELETE`) för användare och skyddat dem med dörrvakten `verifyToken`.
+
+### 🎨 Frontend / Klient
+* **`public/login.html`** – Byggt om strukturen för att rymma två Bootstrap-formulär (login och register) i samma vy med smarta id-taggar.
+* **`public/admin.html`** – Lagt till en responsiv Bootstrap-tabell längst ner på sidan för att visualisera registrerade användare samt en ny välkomsttext.
+* **`public/js/login.js`** – Skrivit JavaScript-logiken för inloggning, registrering, automatisk fälttömning, felhantering och dynamisk flikväxling.
+* **`public/js/adminBooks.js`** – Hämtat användardata från API:et och renderat tabellraderna live med `.map().join("")` samt byggt `deleteUser`-funktionen.
+
+---
+
+## Vad jag har gjort i projektet
+
+### 1. Backend & Databasintegrering
+* **Persistent databas:** Ersatt lärarens hårdkodade arrayer med en riktig, levande **MongoDB**-databas via Mongoose.
+* **Användarmodell:** Implementerat ett robust `UserSchema` i Mongoose med fält för `username`, krypterat `password`, `is_admin`-status samt automatiska tidsstämplar via `created_at`.
+
+### 2. Autentisering & Säkerhet (Auth-systemet)
+* **Registrering (`POST /api/auth/register`):** Byggt en endpoint som kontrollerar mot databasen så att användarnamnet inte redan är upptaget innan ett nytt konto skapas.
+* **Lösenordskryptering:** Integrerat `bcrypt` för att hasha lösenord innan de sparas. Inga lösenord sparas eller hanteras i klartext.
+* **Inloggning (`POST /api/auth/login`):** Skapat ett inloggningssystem som validerar lösenord med `bcrypt.compare` och signerar en säker **JSON Web Token (JWT)** vid lyckad inloggning.
+* **HttpOnly Cookies:** Konfigurerat Express till att skicka JWT-token i en säker `httpOnly`-cookie (`accessToken`). Detta skyddar sessionen mot XSS-attacker eftersom klient-JavaScript inte kan läsa cookien.
+* **Utloggning (`POST /api/auth/logout`):** Byggt hantering som rensar och sätter utgångsdatumet på autentiseringscookien till Unix-epoken (1970) för omedelbar radering.
+* **Skyddade Routes:** Kopplat på Express-middleware (`verifyToken`) som dörrvakt på alla känsliga endpoints för att säkerställa att användaren har en giltig session.
+
+### 3. CRUD-logik för användare
+* **Säkra databasanrop:** Använt `.select('-password')` på alla endpoints där användardata hämtas, vilket garanterar att krypterade lösenordshashar aldrig läcker ut till frontend.
+* **PATCH & DELETE:** Implementerat endpoints för att säkert uppdatera (med automatisk om-hashing av lösenord vid ändring) samt radera användarkonton helt ur MongoDB.
+
+### 4. Klientsida & Frontend JavaScript
+* **Dynamisk vy-växling:** Byggt ett modernt gränssnitt på `login.html` som växlar mellan logga in- och registreringsvyer utan omladdning via Bootstraps `d-none`-klass och formulärets inbyggda `.reset()`.
+* **Stateful felhantering:** Skapat logik som automatiskt städar bort gamla meddelanden och uppdaterar färgklasser (`text-success` / `text-danger`) när användaren navigerar eller skickar formulär.
+* **Cookie-överföring:** Konfigurerat klientsidans `fetch`-anrop med **`credentials: "include"`**. Detta krävs för att webbläsaren ska tillåtas att spara, skicka med och rensar cookies automatiskt i bakgrunden.
+* **Användartabell på Adminpanelen (`admin.html`):**
+  * **Säkerhetskontroll vid sidladdning:** Om ett API-anrop returnerar `401` eller `403` skickas en utloggad användare omedelbart tillbaka till loginsidan med flaggan `?error=unauthorized`.
+  * **Dynamisk tabellritning:** Använt prestandavänlig array-mapping (`.map().join("")`) för att generera en Bootstrap-tabell som visar användarnas `_id`, `username`, `is_admin` och `created_at`.
+  * **Interaktiv radering:** Lagt till en **Delete User**-knapp på varje rad som kör en `confirm`-ruta innan den raderar användaren live ur MongoDB och uppdaterar vyn direkt.
+
+
 ---------------------------------------------------------------------------------
 
 ### Ansvarsområde 2 - Books
@@ -76,8 +123,16 @@ Testade samtliga endpoints manuellt med REST Client (reviews-test.http), både l
 
 ---------------------------------------------------------------------------------
 
-### Filip
-din text här
+### Filip - ansvarsområde: users
+
+#### Sammanfattning
+Grupparbetet har gått mycket bra. Vi kom enkelt överens och kunde snabbt enas om vad och hur vi skulle göra. Vi hade möten nästan alla dagar och kommunicerade i chatten stort sett varje dag. Kände att kommunikationen var god. Upplevde inte att det uppstod någon förvirring kring arbetet. Vi blev färdiga i god tid och behövde inte stressa vilket var skönt. Vi arbetade strukturerat med github issues och branches vilket gjorde att arbetet lades upp smidigt. 
+
+#### Vad har varit svårt
+I början var det utmanande att se helhetsperspektivet på hur projektet skulle se ut. Hur man skulle börja koda och sen koppla ihop varandras områden, utan att råka kliva in på andras områden. Hade mest problem med att få till så att feedback-meddelanden för success eller error visas och försvinner vid rätt tillfällen. Detta fick jag pilla lite med. Ett frustreringsmoment var när man frågade AI om lösningar och den spottade ut kod som var antingen överkomplicerad eller för simpel som inte var bra praxis.
+
+#### Vad har varit lätt
+Skapa CRUD med MongoDB var mer simpelt än SQL. Och eftersom vi övat i klassen en del nu på CRUD så kändes det inte så invecklat. Bootstrap underlättade styling så man inte behövde lägga lika mycket tid på det. Att få ett kodskal med instruktioner och de olika ansvarsområdena tydligt uppdelade var en stor hjälp för att komma igång vilket brukar vara det svåraste för mig. Att få se exempel på tidigare projekt gav en bra inblick på hur slutprodukten ska se ut.
 
 ---------------------------------------------------------------------------------
 
