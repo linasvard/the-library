@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "6aa839744b7fd565796e22ce"
+  },
+  "username": "updatedtestuser",
+  "password": "$2b$10$ieVj7niBpL/l.ySbk34pTuq9eiOZvlpuJ9NronQA.FtxsGL68BMj2",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-14T18:14:12.263Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa9064a24516578930cfd04"
+  },
+  "username": "admin",
+  "password": "$2b$10$8w5zpLXz.vaodL1gnlNlT.eBYFfm6x/40DXf4Ach.jsIxe/9ZYClu",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-15T08:48:10.395Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa97edc103e3b002daee07d"
+  },
+  "username": "deleteMe",
+  "password": "$2b$10$mMpuUZP2UXZVoBYwmAwUoeRRWjHFzEEDkzRTiKLqIBpXePdu1xCSi",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-15T17:22:36.782Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa9a695103e3b002daee083"
+  },
+  "username": "deleteMe2",
+  "password": "$2b$10$C1mJUaR.biP84yQnGs1NTO8OY/zBjLDE9ZEeF95XPE4DKmcQY36Nu",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-15T20:12:05.878Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa9c612103e3b002daee099"
+  },
+  "username": "test123",
+  "password": "$2b$10$tYL5GJC/29txvg9M93ebOewmVz5DaVd0.wJJYY6sWBxvv09SjBP6W",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-15T22:26:26.240Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa9cadb103e3b002daee09f"
+  },
+  "username": "test1234",
+  "password": "$2b$10$tKa7PpKybohNBra44iLxK.yotN34wiwKQR/hPyF6Dnl9e7smdpFVG",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-15T22:46:51.853Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa3cd8bcbbaa0ac26d5078"
+  },
+  "username": "Marcusey",
+  "password": "$2b$10$tLs8GueZl4ZEJmjqdRC/F.AXqeRpkJpyXVe35IxXCfS7NRs8YLnl6",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-16T06:53:12.546Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa46bd45bf32a950bf77bd"
+  },
+  "username": "lina",
+  "password": "$2b$10$fAqa4TyIwxTvEEIwxkSWmO40jnIv5dIy0RSwo7lIFcxfltNk3IOWO",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-16T07:35:25.590Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aab8f61c19e48b3d695a98a"
+  },
+  "username": "Marcusey01",
+  "password": "$2b$10$A.9e0/L9cPR9NVXICM/n5O67xwcAY.b.XJ.mw/JN4C4e507WZIE0q",
+  "is_admin": false,
+  "created_at": {
+    "$date": "2026-09-17T06:57:37.326Z"
+  },
+  "__v": 0
+}]

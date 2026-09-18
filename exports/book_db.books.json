@@ -1,0 +1,201 @@
+[{
+  "_id": {
+    "$oid": "6aa2b5503759556aa606411b"
+  },
+  "title": "The Lord of the Rings",
+  "description": "A hobbit sets out on an epic journey to destroy a powerful ring.",
+  "author": "J.R.R. Tolkien",
+  "genres": [
+    "Fantasy",
+    "Adventure"
+  ],
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgmDuQTZaHi0weQhfb38av4U-vUJv5njXCROyF3IxdgXGAS5o27k7vvFD7&s=10",
+  "published_year": 1954,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa2b83184c8705c323e7114"
+  },
+  "title": "Katabasis",
+  "description": "A doctoral student descends into Hell to save her advisor's soul, navigating academic rivalry and the underworld's bureaucratic logic along the way.",
+  "author": "R. F. Kuang",
+  "genres": [
+    "Fantasy",
+    "Dark Academia"
+  ],
+  "image": "https://m.media-amazon.com/images/I/91eA187qd4L._AC_UF1000,1000_QL80_.jpg",
+  "published_year": 2025,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa3ebce05de51066e029163"
+  },
+  "title": "A Little Life",
+  "description": "A Little Life follows four college classmates broke, adrift, and buoyed only by their friendship and ambition as they move to New York in search of fame and fortune. While their relationships, which are tinged by addiction, success, and pride, deepen over the decades, the men are held together by their devotion to the brilliant, enigmatic Jude, a man scarred by an unspeakable childhood trauma. A hymn to brotherly bonds and a masterful depiction of love in the twenty-first century, Hanya Yanagihara s stunning novel is about the families we are born into, and those that we make for ourselves. Hej",
+  "author": "Hanya Yanagihara",
+  "genres": [
+    "Drama"
+  ],
+  "image": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/81b1xsqo2OL._SL1500_.jpg",
+  "published_year": 2016,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa3ec7a05de51066e029166"
+  },
+  "title": "The Poppy War",
+  "description": "The Poppy War by R.F. Kuang is a dark historical military fantasy inspired by 20th-century Chinese history. The story follows Rin, a dark-skinned southern orphan who shocks the Empire by acing the prestigious Keju test, allowing her to escape a life of servitude and forced marriage under her criminal guardians.",
+  "author": "R. F. Kuang",
+  "genres": [
+    "Fantasy"
+  ],
+  "image": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/71Ybjd-4f9L._SL1500_.jpg",
+  "published_year": 2018,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa4432b1efcd007503eba3d"
+  },
+  "title": "The Hobbit",
+  "description": "A reluctant hobbit is swept into an epic quest to reclaim a mountain kingdom from a fearsome dragon.",
+  "author": "J.R.R. Tolkien",
+  "genres": [
+    "Fantasy",
+    "Adventure"
+  ],
+  "image": "https://bilder.akademibokhandeln.se/images_akb/9780261103344_766",
+  "published_year": 1937,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa443351efcd007503eba3f"
+  },
+  "title": "Project Hail Mary",
+  "description": "A lone astronaut wakes up with no memory on a solo mission to save humanity from extinction, and must piece together what happened.",
+  "author": "Andy Weir",
+  "genres": [
+    "Science Fiction",
+    "Adventure"
+  ],
+  "image": "https://m.media-amazon.com/images/I/91d2syGvGZL._AC_UF1000,1000_QL80_.jpg",
+  "published_year": 2021,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa4441e1efcd007503eba47"
+  },
+  "title": "Intermezzo",
+  "description": "Two brothers navigate grief after their father's death while each confronts very different relationships and ways of understanding love and connection.",
+  "author": "Sally Rooney",
+  "genres": [
+    "Drama",
+    "Literary Fiction"
+  ],
+  "image": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/81NIQGJAQPL._SL1500_.jpg",
+  "published_year": 2024,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa4449d1efcd007503eba4a"
+  },
+  "title": "Blood Over Bright Haven",
+  "description": "The first woman admitted to an elite magical academy uncovers a horrifying secret the city's prosperity has been built on, forcing her to question everything she believed in.",
+  "author": "M.L. Wang",
+  "genres": [
+    "Fantasy"
+  ],
+  "image": "https://m.media-amazon.com/images/I/81K9ZIQf4VL._AC_UF1000,1000_QL80_.jpg",
+  "published_year": 2023,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa7c0d1e5f09e6f1871ff93"
+  },
+  "title": "Yellowface",
+  "description": "The Number One Global Sensation *Foyle’s Fiction Book of the Year* *Amazon Book of the Year* *Shortlisted for Waterstones Book of the Year* *Fiction Book of the Year 2024 – British Book Awards* ‘Addictive’ Grazia ‘Hugely entertaining’ Observer ‘Provocative’ Mail on Sunday THIS IS ONE HELL OF A STORY. IT’S JUST NOT HERS TO TELL. When failed writer June Hayward witnesses her rival Athena Liu die in a freak accident, she sees her opportunity… and takes it.So what if it means stealing Athena’s final manuscript?So what if it means ‘borrowing’ her identity?And so what if the first lie is only the beginning… Finally, June has the fame she always deserved. But someone is about to expose her… What happens next is entirely everyone else's fault. ‘The book that everyone is talking about’ Glamour ‘Ingenious, astute, hugely entertaining’ David Nicholls ‘Breathtakingly clever on jealousy, talent, success, and who gets to tell which story’ Elizabeth Day ‘Hard to put down. Harder to forget’ Stephen King R.F. Kuang’s book Yellowface was a #1 Sunday Times bestseller w/c 04-06-23R.F. Kuang’s book Yellowface was a #5 New York Times bestseller w/c 04-06-23",
+  "author": "R. F. Kuang",
+  "genres": [
+    "Literary Fiction"
+  ],
+  "image": "https://m.media-amazon.com/images/I/51hxRAoHuxL.jpg",
+  "published_year": 2024,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa7c3ce6ddd999d2b82450c"
+  },
+  "title": "As Many Souls as Stars",
+  "description": "1592. Cybil Harding is a First Daughter. Cursed to bring disaster to those around her, she is trapped in a house with a mother paralyzed by grief and a father willing to sacrifice everything in pursuit of magic.",
+  "author": "Natasha Siegel",
+  "genres": [
+    "Fantasy",
+    "Romance"
+  ],
+  "image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1742301452i/228383160.jpg",
+  "published_year": 2025,
+  "created_at": {
+    "$date": "2026-09-14T09:52:14.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa7e8445bf32a950bf7800"
+  },
+  "title": "Sword of Kaigen",
+  "description": "Better to die sharp in war than rust through a time of peace.\nA mother struggling to repress her violent past, A son struggling to grasp his violent future, A father blind to the danger that threatens them all. When the winds of war reach their peninsula, will the Matsuda family have the strength to defend their empire? Or will they tear each other apart before the true enemies even reach their shores?High on a mountainside at the edge of the Kaigenese Empire live the most powerful warriors in the world, superhumans capable of raising the sea and wielding blades of ice. For hundreds of years, the fighters of the Kusanagi Peninsula have held the Empire’s enemies at bay, earning their frozen spit of land the name ‘The Sword of Kaigen.’Born into Kusanagi’s legendary Matsuda family, fourteen-year-old Mamoru has always known his purpose: to master his family’s fighting techniques and defend his homeland. But when an outsider arrives and pulls back the curtain on Kaigen’s alleged age of peace, Mamoru realizes that he might not have much time to become the fighter he was bred to be. Worse, the empire he was bred to defend may stand on a foundation of lies.Misaki told herself that she left the passions of her youth behind when she married into the Matsuda house. Determined to be a good housewife and mother, she hid away her sword, along with everything from her days as a fighter in a faraway country. But with her growing son asking questions about the outside world, the threat of an impending invasion looming across the sea, and her frigid husband grating on her nerves, Misaki finds the fighter in her clawing its way back to the surface.",
+  "author": "M. L. Wuang",
+  "genres": [
+    "Fantasy"
+  ],
+  "image": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/71CrKDOkS2L._SL1500_.jpg",
+  "published_year": 2019,
+  "created_at": {
+    "$date": "2026-09-16T11:33:24.523Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa7fa045bf32a950bf7805"
+  },
+  "title": "Je m'appelle Agneta",
+  "description": "Je m'appelle Agneta (My Name is Agneta), a popular novel by Swedish author Emma Hamberg, is a warm, feel-good story about self-discovery, breaking free from routine, and embracing life at any age.\n\nAgneta is 49 years old and feels completely invisible. Her children have moved out, her job is soul-crushing, and her marriage to her husband, Einar, has lost all spark. While Einar is obsessed with birdwatching, health food, and cold showers, Agneta secretly craves rich cheese, red wine, and simple warmth. Desperate for a change, she responds to an unusual classified ad looking for someone to help an elderly man in a small village in Provence, France, and impulsively leaves her dull life in Sweden behind.",
+  "author": "Emma Hamberg",
+  "genres": [
+    "Literary Fiction"
+  ],
+  "image": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/91w3G-JTLJL._SL1500_.jpg",
+  "published_year": 2022,
+  "created_at": {
+    "$date": "2026-09-16T11:38:08.795Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aac049c4178c7a38a0a51b9"
+  },
+  "title": "Just Kids",
+  "description": "Winner of the Non-Fiction National Book Award Patti Smith's definitive memoir is an evocative, honest and moving coming-of-age story of her extraordinary relationship with the artist Robert Mapplethorpe.‘Sharp, elegiac and finely crafted' Sunday Times ‘Terrifically evocative ... The most spellbinding and diverting portrait of funky-but-chic New York in the late '60s and '70s that any alumnus has committed to print' New York Times‘Render, harrowing, often hilarious' VogueIn 1967, a chance meeting between two young people led to a romance and a lifelong friendship that would carry each to international success never dreamed of. The backdrop is Brooklyn, Chelsea Hotel, Max's Kansas City, Scribner's Bookstore, Coney Island, Warhol's Factory and the whole city resplendent. Among their friends, literary lights, musicians and artists such as Harry Smith, Bobby Neuwirth, Allen Ginsberg, Sandy Daley, Sam Shepherd, William Burroughs, etc. It was a heightened time politically and culturally; the art and music worlds exploding and colliding. In the midst of all this two kids made a pact to always care for one another. Scrappy, romantic, committed to making art, they prodded and provided each other with faith and confidence during the hungry years--the days of cous-cous and lettuce soup. Just Kids begins as a love story and ends as an elegy. Beautifully written, this is a profound portrait of two young artists, often hungry, sated only by art and experience. And an unforgettable portrait of New York, her rich and poor, hustlers and hellions, those who made it and those whose memory lingers near.",
+  "author": "Patti Smith",
+  "genres": [
+    "Biography",
+    "Non-Fiction"
+  ],
+  "image": "https://bilder.akademibokhandeln.se/images_akb/9780747568766_766",
+  "published_year": 2011,
+  "created_at": {
+    "$date": "2026-09-17T15:17:48.365Z"
+  },
+  "__v": 0
+}]

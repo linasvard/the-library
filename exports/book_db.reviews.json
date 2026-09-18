@@ -1,0 +1,165 @@
+[{
+  "_id": {
+    "$oid": "6aa3de08acffe9737c620442"
+  },
+  "name": "Anna",
+  "content": "Riktigt bra bok!",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aa2b5503759556aa606411b"
+  },
+  "created_at": {
+    "$date": "2026-09-11T10:55:04.191Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa3d2cbcbbaa0ac26d5085"
+  },
+  "name": "First",
+  "content": "But not last",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aa443351efcd007503eba3f"
+  },
+  "created_at": {
+    "$date": "2026-09-16T06:54:36.819Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaaaac545bf32a950bf7a6d"
+  },
+  "name": "Lina",
+  "content": "så så bra bok rekommenderar!!!!!!",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aaa7fa045bf32a950bf7805"
+  },
+  "created_at": {
+    "$date": "2026-09-16T14:42:13.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aab9a4717d585477cb326dc"
+  },
+  "name": "First",
+  "content": "Great",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aaa7e8445bf32a950bf7800"
+  },
+  "created_at": {
+    "$date": "2026-09-17T07:44:07.913Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aab9ebed137e42383bf79e7"
+  },
+  "name": "Lina",
+  "content": "Har inte läst men filmen va bra :)",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aa2b5503759556aa606411b"
+  },
+  "created_at": {
+    "$date": "2026-09-17T08:03:10.369Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aabac2c42e4efdfe051f246"
+  },
+  "name": "Name",
+  "content": ".",
+  "rating": 5,
+  "book_id": {
+    "$oid": "6aaa7e8445bf32a950bf7800"
+  },
+  "created_at": {
+    "$date": "2026-09-17T09:00:28.615Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aabacc942e4efdfe051f251"
+  },
+  "name": "Logged out",
+  "content": "Logged out review",
+  "rating": 2,
+  "book_id": {
+    "$oid": "6aa7c3ce6ddd999d2b82450c"
+  },
+  "created_at": {
+    "$date": "2026-09-17T09:03:05.645Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aabcb7ed137e42383bf7aa8"
+  },
+  "name": "Lina",
+  "content": "Bra bok ",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aa3ec7a05de51066e029166"
+  },
+  "created_at": {
+    "$date": "2026-09-17T11:14:06.923Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aabcbc03bdb11797e9031f7"
+  },
+  "name": "Filip",
+  "content": "AMAZE AMAZE AMAZE",
+  "rating": 5,
+  "book_id": {
+    "$oid": "6aa443351efcd007503eba3f"
+  },
+  "created_at": {
+    "$date": "2026-09-17T11:15:12.431Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aacd3c30acb83904d5cb24d"
+  },
+  "name": "Lina",
+  "content": "Den förstörde mig :(",
+  "rating": 5,
+  "book_id": {
+    "$oid": "6aa3ebce05de51066e029163"
+  },
+  "created_at": {
+    "$date": "2026-09-18T06:01:39.415Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aacd9dd0acb83904d5cb255"
+  },
+  "name": "Lina",
+  "content": "Jätte bra!!",
+  "rating": 4,
+  "book_id": {
+    "$oid": "6aa3ebce05de51066e029163"
+  },
+  "created_at": {
+    "$date": "2026-09-18T06:27:41.874Z"
+  },
+  "__v": 0
+}]
