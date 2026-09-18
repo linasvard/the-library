@@ -13,7 +13,9 @@
 
 ## Projekt gjort av:
 [Filip Brandt](https://github.com/filip-brandt)
+
 [Lina Svärd](https://github.com/linasvard)
+
 [Marcus Yttermyr](https://github.com/Marcusey)
 
 
