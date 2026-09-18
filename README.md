@@ -72,7 +72,7 @@ Logga sedan in via inloggningssidan i klienten med samma uppgifter.
 ## Vad vi har gjort
 
 ### Ansvarsområde 1 - Users
-- [Filip Brandt](https://github.com/filip-brandt)
+[Filip Brandt](https://github.com/filip-brandt)
 
 Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
 
@@ -168,7 +168,7 @@ På grund av miss i att läsa beskrivningen råkade jag ta tag i att göra book.
 ---------------------------------------------------------------------------------
 
 ### Ansvarsområde 3 - Reviews
-- [Marcus Yttermyr](https://github.com/Marcusey)
+[Marcus Yttermyr](https://github.com/Marcusey)
 
 Jag tog på mig ansvarsområde 3 med reviews.
 
