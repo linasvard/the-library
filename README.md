@@ -11,6 +11,12 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+## Projekt gjort av:
+[Filip Brandt](https://github.com/filip-brandt)
+[Lina Svärd](https://github.com/linasvard)
+[Marcus Yttermyr](https://github.com/Marcusey)
+
+
 ## Installation
 
 1. Klona repot:
@@ -61,7 +67,7 @@ Registrera en användare via ett POST-anrop till `/api/auth/register` (t.ex. via
 Logga sedan in via inloggningssidan i klienten med samma uppgifter.
 
 
-## Made by
+## Vad vi har gjort
 
 ### Ansvarsområde 1 - Users
 - [Filip Brandt](https://github.com/filip-brandt)
