@@ -16,7 +16,7 @@ export const fetchUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
 
     try {
-        const user = await users.findById(userId).select('-password'); // Exclude the password field from the response
+        const user = await users.findById(userId).select('-password'); 
         if (!user) {
             res.status(404).json({ message: 'User not found' });
             return;
@@ -37,7 +37,7 @@ export const updateUser = async (req: Request, res: Response) => {
             updates.password = await bcrypt.hash(updates.password, 10);
         }
 
-        const updatedUser = await users.findByIdAndUpdate(userId, updates, { new: true }).select('-password'); // Exclude the password field from the response
+        const updatedUser = await users.findByIdAndUpdate(userId, updates, { new: true }).select('-password'); 
         if (!updatedUser) {
             res.status(404).json({ message: 'User not found' });
             return;

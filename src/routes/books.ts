@@ -16,6 +16,4 @@ router.post('/', verifyToken, createBook)
 router.patch('/:id', verifyToken, updateBook)
 router.delete('/:id', verifyToken, deleteBook)
 
-
 export default router
-
