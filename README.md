@@ -68,16 +68,16 @@ Logga sedan in via inloggningssidan i klienten med samma uppgifter.
 
 Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
 
-## Filer jag har arbetat i
+### Filer jag har arbetat i
 
-### 💻 Backend
+#### 💻 Backend
 * **`src/models/User.ts`** – Skapat Mongoose-schemat och modellen för användare i databasen.
 * **`src/controllers/authController.ts`** – Byggt auth-logik (`login`, `register`, `logout`) med lösenords-hashing (`bcrypt`), JWT-signering och cookie-hantering med robust `try/catch`.
 * **`src/controllers/userController.ts`** – Skapat alla CRUD-funktioner för användare (`fetchAllUsers`, `fetchUserById`, `updateUser`, `deleteUser`) och säkrat dem med `.select('-password')`.
 * **`src/routes/auth.ts`** – Definerat Express-routern och bundit `POST`-metoderna för inloggning, registrering och utloggning.
 * **`src/routes/users.ts`** – Kopplat ihop alla CRUD-anrop (`GET`, `PATCH`, `DELETE`) för användare och skyddat dem med dörrvakten `verifyToken`.
 
-### 🎨 Frontend / Klient
+#### 🎨 Frontend / Klient
 * **`public/login.html`** – Byggt om strukturen för att rymma två Bootstrap-formulär (login och register) i samma vy med smarta id-taggar.
 * **`public/admin.html`** – Lagt till en responsiv Bootstrap-tabell längst ner på sidan för att visualisera registrerade användare samt en ny välkomsttext.
 * **`public/js/login.js`** – Skrivit JavaScript-logiken för inloggning, registrering, automatisk fälttömning, felhantering och dynamisk flikväxling.
@@ -85,13 +85,13 @@ Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
 
 ---
 
-## Vad jag har gjort i projektet
+### Vad jag har gjort i projektet
 
-### 1. Backend & Databasintegrering
+#### 1. Backend & Databasintegrering
 * **Persistent databas:** Ersatt lärarens hårdkodade arrayer med en riktig, levande **MongoDB**-databas via Mongoose.
 * **Användarmodell:** Implementerat ett robust `UserSchema` i Mongoose med fält för `username`, krypterat `password`, `is_admin`-status samt automatiska tidsstämplar via `created_at`.
 
-### 2. Autentisering & Säkerhet (Auth-systemet)
+#### 2. Autentisering & Säkerhet (Auth-systemet)
 * **Registrering (`POST /api/auth/register`):** Byggt en endpoint som kontrollerar mot databasen så att användarnamnet inte redan är upptaget innan ett nytt konto skapas.
 * **Lösenordskryptering:** Integrerat `bcrypt` för att hasha lösenord innan de sparas. Inga lösenord sparas eller hanteras i klartext.
 * **Inloggning (`POST /api/auth/login`):** Skapat ett inloggningssystem som validerar lösenord med `bcrypt.compare` och signerar en säker **JSON Web Token (JWT)** vid lyckad inloggning.
@@ -99,11 +99,11 @@ Jag tog på mig ansvarsområde 1 med users, registrering och inloggning.
 * **Utloggning (`POST /api/auth/logout`):** Byggt hantering som rensar och sätter utgångsdatumet på autentiseringscookien till Unix-epoken (1970) för omedelbar radering.
 * **Skyddade Routes:** Kopplat på Express-middleware (`verifyToken`) som dörrvakt på alla känsliga endpoints för att säkerställa att användaren har en giltig session.
 
-### 3. CRUD-logik för användare
+#### 3. CRUD-logik för användare
 * **Säkra databasanrop:** Använt `.select('-password')` på alla endpoints där användardata hämtas, vilket garanterar att krypterade lösenordshashar aldrig läcker ut till frontend.
 * **PATCH & DELETE:** Implementerat endpoints för att säkert uppdatera (med automatisk om-hashing av lösenord vid ändring) samt radera användarkonton helt ur MongoDB.
 
-### 4. Klientsida & Frontend JavaScript
+#### 4. Klientsida & Frontend JavaScript
 * **Dynamisk vy-växling:** Byggt ett modernt gränssnitt på `login.html` som växlar mellan logga in- och registreringsvyer utan omladdning via Bootstraps `d-none`-klass och formulärets inbyggda `.reset()`.
 * **Stateful felhantering:** Skapat logik som automatiskt städar bort gamla meddelanden och uppdaterar färgklasser (`text-success` / `text-danger`) när användaren navigerar eller skickar formulär.
 * **Cookie-överföring:** Konfigurerat klientsidans `fetch`-anrop med **`credentials: "include"`**. Detta krävs för att webbläsaren ska tillåtas att spara, skicka med och rensar cookies automatiskt i bakgrunden.
