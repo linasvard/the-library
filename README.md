@@ -194,7 +194,7 @@ Testade samtliga endpoints manuellt med REST Client (reviews-test.http), både l
 
 ---------------------------------------------------------------------------------
 
-## Egna tankar från medlemmarna
+## 💭 Egna tankar från medlemmarna
 
 ### Filip - ansvarsområde: users
 
