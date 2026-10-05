@@ -14,7 +14,7 @@ initHeader.innerHTML = `
             <a class="nav-link" href="login.html" id="login-link">Log in</a>
           </li>
           <li class="nav-item" id="admin-link-item">
-            <a class="nav-link" href="admin.html">Admin</a>
+            <a class="nav-link" href="admin.html">Edit</a>
           </li>
         </ul>
       </div>
@@ -34,7 +34,7 @@ initFooter.innerHTML = `
           <a class="nav-link" href="login.html" id="login-link-footer">Log in</a>
         </li>
         <li class="nav-item ms-3" id="admin-link-item-footer">
-          <a class="nav-link" href="admin.html">Admin</a>
+          <a class="nav-link" href="admin.html">Edit</a>
         </li>
       </ul>
     </div>
