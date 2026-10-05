@@ -11,6 +11,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+## 🛠️ OBS, README under construction! 🛠️
+
 ## Projekt gjort av:
 [Filip Brandt](https://github.com/filip-brandt)
 
