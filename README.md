@@ -11,14 +11,10 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## 🛠️ OBS, README under construction! 🛠️
+**[🔗 Demo](https://this-is-the-library.vercel.app/)**
 
 ## Projekt gjort av:
-[Filip Brandt](https://github.com/filip-brandt)
-
-[Lina Svärd](https://github.com/linasvard)
-
-[Marcus Yttermyr](https://github.com/Marcusey)
+[Filip Brandt](https://github.com/filip-brandt) | [Lina Svärd](https://github.com/linasvard) | [Marcus Yttermyr](https://github.com/Marcusey)
 
 -----
 
@@ -26,7 +22,7 @@
 
 1. Klona repot:
 ```bash
-git clone https://github.com/linasvard/grupp-7-inlamning.git
+git clone https://github.com/linasvard/the-librry.git
 git clone 
 cd grupp-7-inlamning
 ```
