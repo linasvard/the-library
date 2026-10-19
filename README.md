@@ -22,7 +22,7 @@
 
 1. Klona repot:
 ```bash
-git clone https://github.com/linasvard/the-librry.git
+git clone https://github.com/linasvard/the-library.git
 git clone 
 cd grupp-7-inlamning
 ```
