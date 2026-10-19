@@ -11,9 +11,11 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-**[🔗 Demo](https://this-is-the-library.vercel.app/)**
 
 ## Om projektet
+
+**[🔗 Demo](https://this-is-the-library.vercel.app/)**
+
 ![Bilder på hemsidan i gult, staplade på varandra](/public/images/the-library.jpg)
 
 **The library.** är en fullstack-webbapp för bokrecensioner, byggd som ett grupprojekt på Medieinstitutet. Besökare kan bläddra bland bokkollektionen, läsa mer om varje bok och lämna egna recensioner med betyg. Administratörer loggar in för att hantera böcker och användare via en skyddad adminpanel.
